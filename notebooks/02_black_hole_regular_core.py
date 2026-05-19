@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # Configuração
 # ============================================================
 
-OUTDIR = "resultados/test02_black_hole_regular_core"
+OUTDIR = "Resultados/test02_black_hole_regular_core"
 os.makedirs(OUTDIR, exist_ok=True)
 
 # Parâmetros testados
