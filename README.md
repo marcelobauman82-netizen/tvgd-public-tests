@@ -8,9 +8,9 @@ The purpose of this repository is not to hide assumptions, but to expose them cl
 
 ---
 
-## Central TVGD Response Function
+## 1. Central TVGD Response Function
 
-In the local/galactic regime, the basic structural response function tested here is:
+In the local and galactic regime, the effective TVGD response function tested in this repository is:
 
 ```text
 P(u) = 1 - exp(-u)
@@ -40,30 +40,46 @@ The fiducial acceleration scale used in the public tests is:
 a0 = 1.2e-10 m s^-2
 ```
 
-In the high-acceleration regime:
+### High-acceleration limit
+
+For
 
 ```text
 g_bar >> a0
+```
+
+we have:
+
+```text
 u >> 1
 P(u) -> 1
 g_TVGD -> g_bar
 ```
 
-so the model recovers the Newtonian/General Relativistic local limit.
+Therefore, the model recovers the Newtonian / General Relativistic local limit.
 
-In the low-acceleration regime:
+### Low-acceleration regime
+
+For
 
 ```text
 g_bar <= a0
+```
+
+we have:
+
+```text
 P(u) < 1
 g_TVGD > g_bar
 ```
 
-and the effective gravitational acceleration is amplified.
+Therefore, the effective gravitational acceleration is amplified.
+
+This is the regime where the model is intended to reproduce the observed galactic acceleration relation.
 
 ---
 
-## Current Public Tests
+## 2. Current Public Tests
 
 ### Test 00 — Baseline Macro/Micro Consistency
 
@@ -84,13 +100,19 @@ Final: PASSOU_FORTE_BASELINE
 
 Interpretation:
 
-The tested TVGD background remains very close to flat Lambda-CDM at the background level, while the local high-acceleration limit satisfies:
+The tested TVGD background remains close to flat Lambda-CDM at the background level, while the local high-acceleration limit satisfies:
 
 ```text
 P(u) approximately 1
 ```
 
 preserving the micro/local regime.
+
+Script:
+
+```text
+cadernos/00_baseline_consistency_macro_micro.py
+```
 
 ---
 
@@ -107,29 +129,80 @@ g_TVGD = g_bar / [1 - exp(-sqrt(g_bar/a0))]
 The SPARC block contains three public scripts:
 
 ```text
-01_sparc_rar_tvgd.py
-01B_sparc_ml_robustness.py
-01C_sparc_rar_comparison.py
+cadernos/01_sparc_rar_tvgd.py
+cadernos/01B_sparc_ml_robustness.py
+cadernos/01C_sparc_rar_comparison.py
 ```
 
-Current results:
+---
+
+#### Test 01A — SPARC/RAR Main Test
+
+This test compares:
 
 ```text
-Test 01A — SPARC/RAR:
+1. baryonic-only acceleration;
+2. TVGD effective acceleration.
+```
+
+Current result:
+
+```text
 Status: PASSOU_FORTE_SPARC_RAR_PRELIMINAR
 N_points = 3389
 N_galaxies = 175
 TVGD improvement MAE = 70.61 %
 TVGD improvement RMSE = 62.53 %
+```
 
-Test 01B — Mass-to-light robustness:
+Interpretation:
+
+TVGD strongly reduces the logarithmic residuals relative to the baryonic-only model in the SPARC/RAR dataset.
+
+---
+
+#### Test 01B — Mass-to-Light Robustness
+
+This test checks whether the SPARC/RAR result depends on a single stellar mass-to-light choice.
+
+The grid tested was:
+
+```text
+Upsilon_disk  = 0.30 to 0.80
+Upsilon_bulge = 0.50 to 1.00
+```
+
+Current result:
+
+```text
 Status: PASSOU_MODERADO_ROBUSTEZ_ML
 N_grid = 66
 frac_pass_global_strong = 1.0
 median improvement MAE = 68.13 %
 minimum improvement MAE = 48.83 %
+```
 
-Test 01C — TVGD vs empirical RAR/MOND:
+Interpretation:
+
+The SPARC/RAR result is not a fragile artifact of one specific stellar mass-to-light choice. Across the tested grid, TVGD improves the global logarithmic residuals over the baryonic-only model.
+
+---
+
+#### Test 01C — TVGD vs Empirical RAR/MOND Controls
+
+This test compares TVGD against:
+
+```text
+1. baryonic-only acceleration;
+2. empirical RAR with fixed g_dagger;
+3. empirical RAR with optimized g_dagger;
+4. MOND simple interpolating function;
+5. MOND standard interpolating function.
+```
+
+Current result:
+
+```text
 Status: PASSOU_FORTE_COMO_REALIZACAO_TVGD_DA_RAR
 max_relative_TVGD_minus_RAR_fixed = 0.0
 TVGD_vs_best_RAR_MAE_percent = 0.766 %
@@ -138,13 +211,30 @@ TVGD_vs_best_RAR_RMSE_percent = 1.840 %
 
 Interpretation:
 
-The TVGD response function reproduces the empirical RAR behavior in the galactic regime, improves strongly over the baryonic-only model, and remains robust under a reasonable stellar mass-to-light variation.
+When
 
-This result should be interpreted as a strong public reproducibility check of the galactic effective regime, not as a complete Bayesian model-selection analysis.
+```text
+a0 = g_dagger = 1.2e-10 m s^-2
+```
+
+the tested TVGD response is mathematically equivalent to the empirical RAR form.
+
+The result should not be interpreted as TVGD "defeating" RAR/MOND in this test. Rather, it shows that TVGD reproduces the empirical RAR behavior as an effective realization of the same acceleration relation, while being embedded in a broader theoretical program.
 
 ---
 
-## Repository Structure
+## 3. Summary of Public Results
+
+| Test | Regime | Status | Main meaning |
+|---|---|---|---|
+| Test 00 | Macro/Micro baseline | PASSOU_FORTE_BASELINE | TVGD preserves the tested local and background limits |
+| Test 01A | SPARC/RAR | PASSOU_FORTE_SPARC_RAR_PRELIMINAR | TVGD improves strongly over baryonic-only acceleration |
+| Test 01B | Mass-to-light robustness | PASSOU_MODERADO_ROBUSTEZ_ML | Result is robust across a stellar M/L grid |
+| Test 01C | RAR/MOND control | PASSOU_FORTE_COMO_REALIZACAO_TVGD_DA_RAR | TVGD reproduces the empirical RAR form |
+
+---
+
+## 4. Repository Structure
 
 Current structure:
 
@@ -171,7 +261,54 @@ tvgd-public-tests/
 
 ---
 
-## Reproducibility Principle
+## 5. How to Run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/tvgd-public-tests.git
+cd tvgd-public-tests
+```
+
+Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the baseline test:
+
+```bash
+python cadernos/00_baseline_consistency_macro_micro.py
+```
+
+Run the SPARC/RAR main test:
+
+```bash
+python cadernos/01_sparc_rar_tvgd.py
+```
+
+Run the mass-to-light robustness test:
+
+```bash
+python cadernos/01B_sparc_ml_robustness.py
+```
+
+Run the TVGD vs RAR/MOND comparison:
+
+```bash
+python cadernos/01C_sparc_rar_comparison.py
+```
+
+Each script creates its own output folder inside:
+
+```text
+Resultados/
+```
+
+---
+
+## 6. Reproducibility Principle
 
 All numerical claims should be reproducible from the scripts in this repository.
 
@@ -181,7 +318,27 @@ This repository is intended as a falsifiable public record of the TVGD numerical
 
 ---
 
-## Current Scope and Next Tests
+## 7. Scientific Status
+
+TVGD is currently presented as an effective theoretical and phenomenological framework under active development.
+
+The public tests should be interpreted as reproducibility checks of the proposed effective model.
+
+The current results are not presented as a final proof of the theory. They are presented as public, testable evidence that the effective TVGD response function:
+
+```text
+1. preserves the tested high-acceleration local regime;
+2. remains close to the tested Lambda-CDM background limit;
+3. reproduces the empirical galactic acceleration relation;
+4. improves strongly over baryonic-only acceleration in SPARC;
+5. remains robust under a reasonable stellar mass-to-light variation.
+```
+
+The goal is to make every relevant claim testable, modifiable, and falsifiable by independent readers.
+
+---
+
+## 8. Current Scope and Next Tests
 
 The current public package includes:
 
@@ -206,17 +363,7 @@ Each new test will be added as a separate reproducibility module.
 
 ---
 
-## Scientific Status
-
-TVGD is currently presented as an effective theoretical and phenomenological framework under active development.
-
-The public tests should be interpreted as reproducibility checks of the proposed effective model.
-
-The goal is to make every relevant claim testable, modifiable, and falsifiable by independent readers.
-
----
-
-## Code and Data Availability
+## 9. Code and Data Availability
 
 The code and scripts are available directly in this repository.
 
@@ -226,7 +373,7 @@ No hidden or private data should be required to reproduce the public tests.
 
 ---
 
-## Citation
+## 10. Citation
 
 If this repository is used or cited, please cite the corresponding manuscript or archived release when available.
 
@@ -234,12 +381,12 @@ A Zenodo DOI will be added after the first stable release.
 
 ---
 
-## Author
+## 11. Author
 
 Marcelo Bauman
 
 ---
 
-## License
+## 12. License
 
 This project is released under the MIT License.
