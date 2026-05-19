@@ -31,7 +31,7 @@ $$
 The fiducial acceleration scale used in the public tests is
 
 $$
-a_0 = 1.2 \times 10^{-10}\ {\rm m\,s^{-2}}.
+a_0 = 1.2 x 10^{-10}\ {\rm m\,s^{-2}}.
 $$
 
 In the high-acceleration regime,
