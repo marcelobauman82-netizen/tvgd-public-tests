@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 # Configuração
 # ============================================================
 
-OUTDIR = "/content/tvgd_test02_black_hole_regular_core"
+OUTDIR = "resultados/test02_black_hole_regular_core"
 os.makedirs(OUTDIR, exist_ok=True)
 
 # Parâmetros testados
