@@ -10,43 +10,54 @@ The purpose of this repository is not to hide assumptions, but to expose them cl
 
 ## Central TVGD Response Function
 
-In the local/galactic regime, the basic structural response function tested here is
+In the local/galactic regime, the basic structural response function tested here is:
 
-$$
-P(u) = 1 - e^{-u}
-$$
+```text
+P(u) = 1 - exp(-u)
+```
 
 with
 
-$$
-u = \sqrt{\frac{g_{\rm bar}}{a_0}}
-$$
+```text
+u = sqrt(g_bar / a0)
+```
 
 and
 
-$$
-g_{\rm TVGD} = \frac{g_{\rm bar}}{P(u)}.
-$$
+```text
+g_TVGD = g_bar / P(u)
+```
 
-The fiducial acceleration scale used in the public tests is
+Equivalently:
 
-$$
-a_0 = 1.2 x 10^{-10}\ {\rm m\,s^{-2}}.
-$$
+```text
+g_TVGD = g_bar / [1 - exp(-sqrt(g_bar/a0))]
+```
 
-In the high-acceleration regime,
+The fiducial acceleration scale used in the public tests is:
 
-$$
-P(u) \rightarrow 1,
-$$
+```text
+a0 = 1.2e-10 m s^-2
+```
+
+In the high-acceleration regime:
+
+```text
+g_bar >> a0
+u >> 1
+P(u) -> 1
+g_TVGD -> g_bar
+```
 
 so the model recovers the Newtonian/General Relativistic local limit.
 
-In the low-acceleration regime,
+In the low-acceleration regime:
 
-$$
-P(u)<1,
-$$
+```text
+g_bar <= a0
+P(u) < 1
+g_TVGD > g_bar
+```
 
 and the effective gravitational acceleration is amplified.
 
@@ -73,11 +84,11 @@ Final: PASSOU_FORTE_BASELINE
 
 Interpretation:
 
-The tested TVGD background remains very close to flat Lambda-CDM at the background level, while the local high-acceleration limit satisfies
+The tested TVGD background remains very close to flat Lambda-CDM at the background level, while the local high-acceleration limit satisfies:
 
-$$
-P(u)\approx 1,
-$$
+```text
+P(u) approximately 1
+```
 
 preserving the micro/local regime.
 
@@ -87,13 +98,11 @@ preserving the micro/local regime.
 
 This test block evaluates the TVGD effective acceleration law using the public SPARC rotation-curve dataset.
 
-The tested relation is
+The tested relation is:
 
-$$
-g_{\rm TVGD} =
-\frac{g_{\rm bar}}
-{1-\exp\left[-\sqrt{g_{\rm bar}/a_0}\right]}.
-$$
+```text
+g_TVGD = g_bar / [1 - exp(-sqrt(g_bar/a0))]
+```
 
 The SPARC block contains three public scripts:
 
