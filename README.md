@@ -1,7 +1,7 @@
 # TVGD — Teoria do Vácuo Gravitacional Dispersivo
 
 **Autor:** Marcelo Bauman  
-**Status:** teoria efetiva em desenvolvimento, com pacote público inicial de validação numérica, reprodutibilidade e falsificabilidade.
+**Status:** teoria efetiva covariante em desenvolvimento, com pacote público inicial de validação numérica, reprodutibilidade e falsificabilidade.
 
 ---
 
@@ -9,9 +9,11 @@
 
 A **Teoria do Vácuo Gravitacional Dispersivo (TVGD)** é uma proposta efetiva para descrever fenômenos gravitacionais em múltiplas escalas sem assumir, como ponto de partida, que matéria escura e energia escura sejam componentes fundamentais.
 
-A ideia central é que o vácuo gravitacional possui uma resposta estrutural dependente do regime físico. Em regiões de alta aceleração ou alta curvatura, a teoria deve recuperar aproximadamente a gravidade usual. Em regimes de baixa aceleração, grandes escalas cosmológicas ou núcleos compactos, a resposta estrutural pode modificar a relação efetiva entre matéria bariônica, geometria e observáveis.
+A ideia central é que o vácuo gravitacional possui uma resposta estrutural dependente do regime físico. Em regiões de alta aceleração ou alta curvatura, a teoria deve recuperar aproximadamente a gravidade usual. Em regimes de baixa aceleração, grandes escalas cosmológicas ou núcleos compactos, essa resposta pode modificar a relação efetiva entre matéria bariônica, geometria e observáveis.
 
-A TVGD é apresentada como uma teoria efetiva, falsificável e progressivamente covariantizada. O objetivo deste repositório é disponibilizar códigos públicos para auditoria, reprodução e crítica independente.
+O estado atual da TVGD é mais forte do que uma fenomenologia isolada: a teoria já possui uma **Camada II covariante efetiva**, com ação estruturada, campo escalar estrutural, vetor temporal unitário, setor vetorial compatível com ondas gravitacionais, mecanismo de screening local e extensão efetiva para buracos negros por saturação estrutural.
+
+Este repositório disponibiliza códigos públicos para auditoria, reprodução, comparação e crítica independente.
 
 ---
 
@@ -19,34 +21,23 @@ A TVGD é apresentada como uma teoria efetiva, falsificável e progressivamente 
 
 No regime galáctico, a resposta principal usada nos testes públicos é:
 
-```text
-P(u) = 1 - exp(-u)
-```
+**P(u) = 1 − exp(−u)**
 
 com:
 
-```text
-u = sqrt(g_bar / a0)
-```
+**u = sqrt(g_bar / a0)**
 
 A aceleração efetiva é escrita como:
 
-```text
-g_TVGD = g_bar / P(u)
-```
+**g_TVGD = g_bar / P(u)**
 
-No limite de baixa aceleração, quando `u << 1`, temos:
+No limite de baixa aceleração, quando **u << 1**, temos:
 
-```text
-P(u) ≈ u
-```
+**P(u) ≈ u**
 
 Portanto:
 
-```text
-g_TVGD ≈ g_bar / sqrt(g_bar/a0)
-       = sqrt(g_bar * a0)
-```
+**g_TVGD ≈ sqrt(g_bar · a0)**
 
 Esse limite reproduz uma relação de aceleração radial profunda do tipo MOND-like, mas dentro da interpretação da TVGD como resposta estrutural do vácuo.
 
@@ -54,33 +45,60 @@ Esse limite reproduz uma relação de aceleração radial profunda do tipo MOND-
 
 ## 3. Interpretação física
 
-Na TVGD, a função `P(u)` representa a fração efetiva de resposta gravitacional estrutural do vácuo.
+Na TVGD, a função **P(u)** representa a fração efetiva de resposta gravitacional estrutural do vácuo.
 
 O fator de amplificação efetiva é:
 
-```text
-alpha(u) = 1 / P(u)
-```
+**alpha(u) = 1 / P(u)**
 
 De maneira qualitativa:
 
-- em regimes solares e laboratoriais, `u >> 1`, então `P(u) -> 1`;
-- em galáxias e regiões de baixa aceleração, `P(u) < 1`, produzindo amplificação efetiva;
-- em buracos negros, a teoria usa uma saturação estrutural regularizada;
+- em regimes solares e laboratoriais, **u >> 1**, então **P(u) → 1**;
+- em galáxias e regiões de baixa aceleração, **P(u) < 1**, produzindo amplificação efetiva;
+- em buracos negros, a teoria usa saturação estrutural do vácuo para preservar o exterior e regularizar o núcleo efetivo;
 - em cosmologia, a resposta estrutural pode aparecer como uma transição temporal efetiva;
-- em uma formulação covariante efetiva, a TVGD busca conectar campos escalares, vetoriais e respostas estruturais sem violar limites solares, PPN e ondas gravitacionais.
+- na formulação covariante efetiva, a TVGD conecta campo escalar, vetor temporal, resposta projetada do vácuo e setores de saturação.
 
 ---
 
-## 4. Setores testados
+## 4. Status covariante
+
+A TVGD não deve mais ser descrita como uma teoria sem covariante. O estágio atual é o de uma **teoria efetiva covariante avançada**.
+
+A Camada II pode ser resumida por uma ação efetiva com setores:
+
+**S_TVGD = S_g + S_proj + S_theta + S_U + S_lambda + S_m**
+
+onde:
+
+| Termo | Papel físico |
+|---|---|
+| **S_g** | setor gravitacional métrico |
+| **S_proj** | resposta estrutural projetada do vácuo |
+| **S_theta** | setor cosmológico homogêneo |
+| **S_U** | setor vetorial tipo Einstein-Aether |
+| **S_lambda** | restrição de normalização do vetor temporal |
+| **S_m** | matéria bariônica |
+
+O setor vetorial admite um ramo compatível com velocidade tensorial igual à da luz:
+
+**c1 + c3 = 0 ⇒ c_T = 1**
+
+Isso é importante para compatibilidade com restrições de ondas gravitacionais.
+
+O ponto ainda em aberto não é “ter uma covariante”, mas sim transformar essa Camada II efetiva em uma formulação fundamental final, com equações acopladas completas, conservação covariante total, perturbações cosmológicas e validação estatística formal.
+
+---
+
+## 5. Setores testados
 
 Este repositório contém códigos públicos de validação para os seguintes setores:
 
 | Setor | Objetivo | Status atual |
 |---|---|---|
-| Galáxias / SPARC | Testar a relação g_bar -> g_TVGD | Evidência robusta/promissora |
+| Galáxias / SPARC | Testar a relação g_bar → g_TVGD | Evidência robusta/promissora |
 | LITTLE THINGS | Validação externa em galáxias anãs | Passou forte como teste externo efetivo |
-| Buracos negros | Preservar horizonte, fótonsfera e sombra de Schwarzschild com núcleo regular | Passou forte nos benchmarks efetivos |
+| Buracos negros | Preservar horizonte, fótonsfera e sombra com núcleo regular | Passou forte nos benchmarks efetivos |
 | Cosmologia de fundo | Checar compatibilidade com expansão tipo Lambda-CDM | Compatível em testes efetivos |
 | Tensão de Hubble | Modelar transição estrutural entre H0 primordial e local | Promissor, ainda em desenvolvimento |
 | RSD / fsigma8 | Verificar crescimento de estruturas | Compatível com Lambda-CDM em teste diagonal |
@@ -89,7 +107,7 @@ Este repositório contém códigos públicos de validação para os seguintes se
 
 ---
 
-## 5. Estrutura do repositório
+## 6. Estrutura do repositório
 
 Estrutura atual/recomendada:
 
@@ -99,7 +117,7 @@ TVGD-Exames-Publicos/
 ├── requirements.txt
 ├── LICENSE
 ├── CITATION.cff
-├── Docs/
+├── docs/
 │   ├── README.md
 │   ├── theory_summary.md
 │   ├── validation_map.md
@@ -108,44 +126,21 @@ TVGD-Exames-Publicos/
 │   ├── falsifiability.md
 │   └── data_sources.md
 ├── notebooks/
-│   └── main_validation/
-│       ├── 00_baseline_consistency_macro_micro.py
-│       ├── 01_sparc_rar_tvgd.py
-│       ├── 01B_sparc_ml_robustness.py
-│       ├── 01C_sparc_rar_comparison.py
-│       ├── 02_black_hole_regular_core.py
-│       ├── 03_cosmology_background_bao.py
-│       ├── 04B_controlled_strong_lensing_selected.py
-│       ├── 05_stability_causality_screening.py
-│       ├── 06_nonphantom_cosmology_background.py
-│       ├── 07B_hubble_structural_phase_transition.py
-│       ├── 07E_pantheon_full_covariance_hubble.py
-│       ├── 07G_pantheon_noncalibrator_shape.py
-│       ├── 07H_hubble_structural_phase_robustness.py
-│       ├── 08_black_hole_structural_saturation.py
-│       ├── 08B_rotating_black_hole_structural_saturation.py
-│       ├── 09_falsifiability_prediction_checklist.py
-│       ├── 10_euclid_forecast_structural_response.py
-│       ├── 11_rmax_sparc_universality.py
-│       ├── 12_rmax_transition_beta_robustness.py
-│       ├── 15_extrisk_little_things_external.py
-│       ├── 17_covrisk_scalar_vector_ppn.py
-│       ├── 18_covrisk_rsd_fsigma8.py
-│       ├── 19_black_hole_structural_saturation.py
-│       ├── 20_falsifiability_prediction_checklist.py
-│       ├── 22_model_comparison_aic_bic_summary.py
-│       └── 23_reproducibility_quickstart.py
+│   ├── main_validation/
+│   ├── black_holes/
+│   ├── hubble/
+│   └── exploratory/
 ├── paper/
 ├── results/
 ├── scripts/
 └── src/
 ```
 
-**Observação:** se o navegador traduzir automaticamente os nomes das pastas na interface do GitHub, use os nomes reais que aparecem na URL do arquivo. Os comandos abaixo assumem a estrutura padrão em inglês: `notebooks/`, `results/`, `paper/`, `scripts/` e `Docs/`.
+Observação: se o navegador traduzir automaticamente a interface do GitHub, use os nomes reais que aparecem na URL do arquivo.
 
 ---
 
-## 6. Instalação
+## 7. Instalação
 
 Clone o repositório:
 
@@ -182,7 +177,7 @@ pip install -r requirements.txt
 
 ---
 
-## 7. Teste rápido de reprodutibilidade
+## 8. Teste rápido de reprodutibilidade
 
 Para verificar a estrutura do repositório, dependências mínimas e sintaxe dos scripts principais, rode:
 
@@ -206,7 +201,7 @@ Esse script é o ponto de entrada recomendado para avaliadores externos.
 
 ---
 
-## 8. Painel estatístico dos testes
+## 9. Painel estatístico dos testes
 
 Para gerar um resumo estatístico dos testes principais, rode:
 
@@ -220,32 +215,24 @@ As saídas serão salvas em:
 results/22_model_comparison_aic_bic_summary/
 ```
 
-Esse script gera:
-
-```text
-tvgd_model_comparison_summary.csv
-tvgd_model_comparison_summary.json
-tvgd_model_comparison_report.md
-```
-
-O objetivo desse painel é reunir, em um só lugar, os principais resultados, setores, status, valores de chi2, chi2_red, AIC/BIC aproximado e notas de interpretação.
+Esse painel reúne os principais resultados, setores, status, valores de chi2, chi2_red, AIC/BIC aproximado e notas de interpretação.
 
 ---
 
-## 9. Documentação complementar
+## 10. Documentação complementar
 
-A pasta [`Docs/`](Docs/) contém documentação de apoio:
+A pasta [`docs/`](docs/) contém documentação de apoio:
 
-- [`Docs/theory_summary.md`](Docs/theory_summary.md): resumo teórico da TVGD;
-- [`Docs/validation_map.md`](Docs/validation_map.md): mapa dos testes públicos;
-- [`Docs/known_limitations.md`](Docs/known_limitations.md): limitações conhecidas;
-- [`Docs/reproducibility_guide.md`](Docs/reproducibility_guide.md): guia de reprodutibilidade;
-- [`Docs/data_sources.md`](Docs/data_sources.md): fontes de dados usadas ou previstas;
-- [`Docs/falsifiability.md`](Docs/falsifiability.md): critérios de falsificação.
+- [`docs/theory_summary.md`](docs/theory_summary.md): resumo teórico da TVGD;
+- [`docs/validation_map.md`](docs/validation_map.md): mapa dos testes públicos;
+- [`docs/known_limitations.md`](docs/known_limitations.md): limitações conhecidas;
+- [`docs/reproducibility_guide.md`](docs/reproducibility_guide.md): guia de reprodutibilidade;
+- [`docs/data_sources.md`](docs/data_sources.md): fontes de dados usadas ou previstas;
+- [`docs/falsifiability.md`](docs/falsifiability.md): critérios de falsificação.
 
 ---
 
-## 10. Dados externos
+## 11. Dados externos
 
 Alguns testes dependem de bases públicas externas. Entre elas:
 
@@ -262,29 +249,23 @@ A separação entre código e dados pesados foi mantida para facilitar a publica
 
 ---
 
-## 11. Resultados principais resumidos
+## 12. Resultados principais resumidos
 
-Alguns resultados consolidados nos testes internos e nos scripts públicos:
-
-### 11.1 Regime galáctico
+### 12.1 Regime galáctico
 
 A função central é:
 
-```text
-P(u) = 1 - exp(-u)
-```
+**P(u) = 1 − exp(−u)**
 
 Ela reproduz o limite profundo:
 
-```text
-g_TVGD ≈ sqrt(g_bar * a0)
-```
+**g_TVGD ≈ sqrt(g_bar · a0)**
 
 Em amostras limpas do SPARC, a TVGD apresenta resíduos centrados próximos de zero e erro médio reduzido após remoção de outliers observacionais.
 
-### 11.2 Validação externa com LITTLE THINGS
+### 12.2 Validação externa com LITTLE THINGS
 
-Em teste externo efetivo com LITTLE THINGS, a família exponencial próxima de `beta ≈ 1.1` supera o modelo bariônico puro.
+Em teste externo efetivo com LITTLE THINGS, a família exponencial próxima de **beta ≈ 1.1** supera o modelo bariônico puro.
 
 Resultado registrado:
 
@@ -292,7 +273,7 @@ Resultado registrado:
 Status: PASSOU_FORTE_EXTRISK1B_LITTLE_THINGS_EXTERNO
 ```
 
-### 11.3 Buracos negros
+### 12.3 Buracos negros
 
 O setor de buracos negros preserva os benchmarks externos de Schwarzschild:
 
@@ -302,14 +283,14 @@ r_ph / r_s ≈ 1.5
 b_shadow / r_s ≈ 2.598076
 ```
 
-A estrutura interna é regularizada por uma saturação efetiva do vácuo, evitando a singularidade no modelo efetivo testado.
+A estrutura interna é regularizada por saturação efetiva do vácuo, evitando a singularidade no modelo efetivo testado.
 
-### 11.4 Covariante efetiva e PPN
+### 12.4 Covariante efetiva e PPN
 
 O setor covariante efetivo possui ramos que preservam:
 
 - velocidade tensorial c_T = 1;
-- estabilidade dos modos;
+- estabilidade dos modos no ramo auditado;
 - limites PPN fortes;
 - compatibilidade solar efetiva.
 
@@ -319,7 +300,7 @@ Resultado registrado:
 Status: PASSOU_FORTE_COVRISK_PPN
 ```
 
-### 11.5 Crescimento de estruturas
+### 12.5 Crescimento de estruturas
 
 Em RSD / fsigma8, a TVGD V1.1 fica praticamente indistinguível de Lambda-CDM em teste diagonal efetivo.
 
@@ -329,7 +310,7 @@ Resultado registrado:
 Status: PASSOU_FORTE_COVRISK8_RSD_FSIGMA8
 ```
 
-### 11.6 Tensão de Hubble
+### 12.6 Tensão de Hubble
 
 A TVGD possui um setor efetivo de transição estrutural capaz de conectar um valor primordial próximo de:
 
@@ -347,36 +328,39 @@ Esse setor é promissor, mas ainda exige validação formal com likelihoods comp
 
 ---
 
-## 12. Falsificabilidade
+## 13. Falsificabilidade
 
 A TVGD pode ser enfraquecida ou derrubada por observações como:
 
-1. curvas de rotação galácticas limpas que violem sistematicamente a forma `P(u) = 1 - exp(-u)`;
-2. lentes gravitacionais que exijam amplificações incompatíveis com `alpha(u) = 1/P(u)`;
+1. curvas de rotação galácticas limpas que violem sistematicamente a forma **P(u) = 1 − exp(−u)**;
+2. lentes gravitacionais que exijam amplificações incompatíveis com **alpha(u) = 1/P(u)**;
 3. dados PPN ou ondas gravitacionais que excluam o ramo covariante efetivo saudável;
 4. medidas de fsigma8, CMB, BAO ou supernovas que gerem tensão estatística forte contra a transição cosmológica proposta;
 5. sombras de buracos negros ou ringdowns que rejeitem a saturação estrutural regularizada;
-6. catálogos externos independentes que mostrem que a função `P(u)` falha de forma sistemática em diferentes classes de galáxias.
+6. catálogos externos independentes que mostrem que a função **P(u)** falha de forma sistemática em diferentes classes de galáxias.
 
 A teoria é construída para ser testável. O objetivo do repositório é permitir que outros pesquisadores rodem, critiquem e tentem falsificar os resultados.
 
 ---
 
-## 13. Limitações atuais
+## 14. Limitações atuais
 
-A TVGD ainda está em desenvolvimento. Entre os pontos em aberto:
+A TVGD está em desenvolvimento avançado. As limitações essenciais são:
 
-- derivação covariante completa a partir de uma ação final única;
-- conexão formal definitiva entre a0, campos estruturais e constantes fundamentais;
-- likelihoods completas com matrizes de covariância para todos os setores;
-- comparação Bayesiana formal contra Lambda-CDM, MOND e modelos com halos de matéria escura;
-- validação independente com pipelines externos;
-- expansão dos testes para Euclid, Rubin/LSST, JWST, SKA e catálogos futuros;
-- derivação final que conecte de forma rigorosa o regime galáctico, cosmológico e de buracos negros dentro da mesma ação efetiva.
+- fechar a ação fundamental final a partir da Camada II covariante efetiva;
+- derivar explicitamente todas as equações acopladas;
+- demonstrar conservação covariante total do tensor energia-momento;
+- implementar perturbações cosmológicas completas;
+- deduzir de forma rigorosa a origem de a0;
+- substituir testes efetivos por likelihoods completas com covariâncias;
+- realizar comparação Bayesiana formal contra Lambda-CDM, MOND e modelos com halos;
+- obter reprodução independente por terceiros.
+
+Essas limitações não significam ausência de base covariante. Significam que a TVGD já tem uma formulação efetiva testável, mas ainda não deve ser apresentada como teoria fundamental final.
 
 ---
 
-## 14. Como rodar os principais scripts
+## 15. Como rodar os principais scripts
 
 ### Quickstart
 
@@ -422,39 +406,21 @@ python notebooks/main_validation/17_covrisk_scalar_vector_ppn.py
 
 ---
 
-## 15. Como interpretar os resultados
+## 16. Como interpretar os resultados
 
 Os resultados devem ser interpretados como validação efetiva inicial, não como prova final.
 
-Uma saída do tipo:
+Uma saída do tipo **PASSOU_FORTE** significa que o teste específico passou nos critérios definidos pelo próprio script. Isso não significa que a teoria esteja definitivamente comprovada.
 
-```text
-PASSOU_FORTE
-```
+Uma saída do tipo **PASSOU_MODERADO** significa compatibilidade parcial ou dependente de hipóteses, cortes, amostra ou aproximações.
 
-significa que o teste específico passou nos critérios definidos pelo próprio script. Isso não significa que a teoria esteja definitivamente comprovada.
-
-Uma saída do tipo:
-
-```text
-PASSOU_MODERADO
-```
-
-significa compatibilidade parcial ou dependente de hipóteses, cortes, amostra ou aproximações.
-
-Uma saída do tipo:
-
-```text
-FALHOU
-```
-
-indica que o setor, modelo ou hipótese testada não passou no critério definido.
+Uma saída do tipo **FALHOU** indica que o setor, modelo ou hipótese testada não passou no critério definido.
 
 A TVGD deve ser avaliada pela cadeia completa de testes, não por um único resultado isolado.
 
 ---
 
-## 16. Sobre matéria escura e energia escura
+## 17. Sobre matéria escura e energia escura
 
 A TVGD não parte da hipótese de que matéria escura e energia escura sejam componentes fundamentais. Em vez disso, tenta reinterpretar parte dos fenômenos atribuídos a esses setores como efeitos de resposta estrutural do vácuo gravitacional.
 
@@ -466,7 +432,7 @@ A pergunta central da TVGD é:
 
 ---
 
-## 17. Filosofia do projeto
+## 18. Filosofia do projeto
 
 Este repositório segue três princípios:
 
@@ -476,7 +442,7 @@ Este repositório segue três princípios:
 
 ---
 
-## 18. Como citar
+## 19. Como citar
 
 Enquanto o artigo formal estiver em preparação, cite este repositório como:
 
@@ -489,7 +455,7 @@ O arquivo [`CITATION.cff`](CITATION.cff) também fornece metadados de citação 
 
 ---
 
-## 19. Aviso científico
+## 20. Aviso científico
 
 Este projeto apresenta uma teoria efetiva alternativa/em desenvolvimento.
 
@@ -499,7 +465,7 @@ A TVGD não é apresentada como teoria final consolidada, mas como um programa d
 
 ---
 
-## 20. Contato
+## 21. Contato
 
 **Autor:** Marcelo Bauman  
 **GitHub:** https://github.com/marcelobauman82-netizen  
