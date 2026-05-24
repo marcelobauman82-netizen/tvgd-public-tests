@@ -30,7 +30,7 @@ keywords:
 repository-code: "https://github.com/marcelobauman82-netizen/tvgd-public-tests"
 url: "https://github.com/marcelobauman82-netizen/tvgd-public-tests"
 
-license: MIT
+license: "MIT"
 
 version: "0.1.0"
 date-released: "2026-05-24"
@@ -42,7 +42,6 @@ preferred-citation:
     - family-names: "Bauman"
       given-names: "Marcelo"
   year: 2026
-  publisher:
-    name: "GitHub"
+  publisher: "GitHub"
   repository-code: "https://github.com/marcelobauman82-netizen/tvgd-public-tests"
   url: "https://github.com/marcelobauman82-netizen/tvgd-public-tests"
