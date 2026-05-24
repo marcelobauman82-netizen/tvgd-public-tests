@@ -215,4 +215,15 @@ marimo/_lsp/
 __marimo__/
 
 # Streamlit
-.streamlit/secrets.toml
+.streamlit/secrets.toml          
+
+
+notebooks/main_validation/11_rmax_sparc_universality.py
+notebooks/main_validation/12_rmax_transition_beta_robustness.py
+notebooks/main_validation/13_rmax_cross_validation_beta_a0.py
+notebooks/main_validation/14_hsc_weak_lensing_tvgd_2halo.py
+notebooks/main_validation/15_extrisk_little_things_external.py
+notebooks/main_validation/16_cmbrisk_class_growth.py
+notebooks/main_validation/17_covrisk_scalar_vector_ppn.py
+notebooks/main_validation/18_rsd_fsigma8_real.py
+notebooks/main_validation/19_exponential_law_uniqueness.py
