@@ -9,11 +9,8 @@
 
 ## 1. Introduction
 
-The manuscript presents the **Teoria do Vácuo Gravitacional Dispersivo (TVGD)** as an effective spacetime theory in development.
-
-The central idea is that part of the phenomena usually attributed to dark matter and dark energy may emerge from a structural response of spacetime itself. In this framework, the gravitational vacuum is not treated as a passive background, but as a physical structure whose response depends on acceleration, curvature, scale and compactness.
-
-The paper will emphasize that TVGD is not only a galaxy-rotation model. It is intended as a complete effective theory of spacetime response, connecting local gravity, galactic dynamics, cosmological evolution, structural time, lensing and strong-field saturation.
+a TVGD trata o espaço-tempo/vácuo gravitacional como uma estrutura física dispersiva, com tensão, saturação, relaxamento e resposta dependente do regime.
+Essa resposta aparece de formas diferentes em galáxias, cosmologia, tempo estrutural e buracos negros, mas a interpretação é a mesma: não é matéria escura/energia escura fundamental; é uma resposta efetiva da estrutura do espaço-tempo.
 
 ---
 
