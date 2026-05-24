@@ -19,37 +19,37 @@ A TVGD é apresentada como uma teoria efetiva, falsificável e progressivamente 
 
 No regime galáctico, a resposta principal usada nos testes públicos é
 
-```math
-P(u) = 1 - e^{-u}
-```
+$$
+P(u) = 1 - e^{-u}.
+$$
 
 com
 
-```math
+$$
 u = \sqrt{\frac{g_{\rm bar}}{a_0}}.
-```
+$$
 
 A aceleração efetiva é escrita como
 
-```math
+$$
 g_{\rm TVGD} = \frac{g_{\rm bar}}{P(u)}.
-```
+$$
 
-No limite de baixa aceleração, quando \(u \ll 1\),
+No limite de baixa aceleração, quando \(u \ll 1\), temos
 
-```math
+$$
+P(u) \approx u.
+$$
 
-P(u) \approx u
+Portanto,
 
-então
-
-```math
+$$
 g_{\rm TVGD}
 \approx
 \frac{g_{\rm bar}}{\sqrt{g_{\rm bar}/a_0}}
 =
 \sqrt{g_{\rm bar}a_0}.
-```
+$$
 
 Esse limite reproduz uma relação de aceleração radial profunda do tipo MOND-like, mas dentro da interpretação da TVGD como resposta estrutural do vácuo.
 
@@ -61,9 +61,9 @@ Na TVGD, a função \(P(u)\) representa a fração efetiva de resposta gravitaci
 
 O fator
 
-```math
+$$
 \alpha(u) = \frac{1}{P(u)}
-```
+$$
 
 funciona como uma amplificação efetiva da gravidade bariônica em regimes onde \(P(u)<1\).
 
@@ -275,15 +275,15 @@ Alguns resultados consolidados nos testes internos e nos scripts públicos:
 
 A função
 
-```math
+$$
 P(u)=1-e^{-u}
-```
+$$
 
 reproduz o limite profundo
 
-```math
+$$
 g_{\rm TVGD}\approx\sqrt{g_{\rm bar}a_0}.
-```
+$$
 
 Em amostras limpas do SPARC, a TVGD apresenta resíduos centrados próximos de zero e erro médio reduzido após remoção de outliers observacionais.
 
@@ -301,17 +301,17 @@ Status: PASSOU_FORTE_EXTRISK1B_LITTLE_THINGS_EXTERNO
 
 O setor de buracos negros preserva os benchmarks externos de Schwarzschild:
 
-```math
+$$
 r_h/r_s \approx 1,
-```
+$$
 
-```math
+$$
 r_{\rm ph}/r_s \approx 1.5,
-```
+$$
 
-```math
+$$
 b_{\rm shadow}/r_s \approx 2.598076.
-```
+$$
 
 A estrutura interna é regularizada por uma saturação efetiva do vácuo, evitando a singularidade no modelo efetivo testado.
 
@@ -344,15 +344,15 @@ Status: PASSOU_FORTE_COVRISK8_RSD_FSIGMA8
 
 A TVGD possui um setor efetivo de transição estrutural capaz de conectar um valor primordial próximo de
 
-```math
+$$
 H_0 \approx 67.4
-```
+$$
 
 a um valor local efetivo maior, próximo de
 
-```math
+$$
 H_0 \approx 72 - 73.
-```
+$$
 
 Esse setor é promissor, mas ainda exige validação formal com likelihoods completas, CMB, BAO, supernovas, covariâncias e controle de efeitos sistemáticos.
 
