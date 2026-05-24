@@ -1,4 +1,3 @@
-
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 title: "TVGD — Teoria do Vácuo Gravitacional Dispersivo: Public Validation Repository"
@@ -13,7 +12,7 @@ abstract: >
   Teoria do Vácuo Gravitacional Dispersivo (TVGD), an effective and falsifiable
   gravitational framework under development. The repository includes scripts for
   galaxy dynamics, black-hole structural saturation, cosmological background
-  checks, Hubble-transition modeling, RSD/fσ8 consistency, PPN/covariant-risk
+  checks, Hubble-transition modeling, RSD/fsigma8 consistency, PPN/covariant-risk
   diagnostics, external validation tests, and falsifiability checklists.
 
 keywords:
@@ -32,17 +31,18 @@ repository-code: "https://github.com/marcelobauman82-netizen/tvgd-public-tests"
 url: "https://github.com/marcelobauman82-netizen/tvgd-public-tests"
 
 license: "MIT"
-
 version: "0.1.0"
 date-released: "2026-05-24"
 
 preferred-citation:
-  type: generic
+  type: software
   title: "TVGD — Teoria do Vácuo Gravitacional Dispersivo: Public Validation Repository"
   authors:
     - family-names: "Bauman"
       given-names: "Marcelo"
   year: 2026
+  version: "0.1.0"
+  date-released: "2026-05-24"
   publisher: "GitHub"
   repository-code: "https://github.com/marcelobauman82-netizen/tvgd-public-tests"
   url: "https://github.com/marcelobauman82-netizen/tvgd-public-tests"
