@@ -630,6 +630,6 @@ The correct scientific status is:
 
 > TVGD has moved beyond a purely phenomenological galactic model. It has an effective covariant spacetime architecture, public tests and falsifiable predictions. What remains open is the final fundamental closure and independent statistical validation.
 
-This framing is important. It avoids two errors: overstating the theory as already complete, and understating it as if no covariant structure existed.
+
 
 
