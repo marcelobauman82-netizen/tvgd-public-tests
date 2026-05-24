@@ -1,4 +1,4 @@
-[README (1).md](https://github.com/user-attachments/files/28193488/README.1.md)
+[README_corrigido.md](https://github.com/user-attachments/files/28194645/README_corrigido.md)
 # TVGD — Teoria do Vácuo Gravitacional Dispersivo
 
 **Autor:** Marcelo Bauman  
@@ -100,14 +100,16 @@ Este repositório contém códigos públicos de validação para os seguintes se
 Estrutura atual/recomendada:
 
 ```text
-tvgd-public-tests/
+TVGD-Exames-Publicos/
 ├── README.md
 ├── requirements.txt
 ├── LICENSE
 ├── CITATION.cff
-├── docs/
+├── Docs/
+│   ├── README.md
 │   ├── theory_summary.md
-│   ├── validation_summary.md
+│   ├── validation_map.md
+│   ├── known_limitations.md
 │   ├── reproducibility_guide.md
 │   ├── falsifiability.md
 │   └── data_sources.md
@@ -145,6 +147,8 @@ tvgd-public-tests/
 └── src/
 ```
 
+> Observação: se o navegador traduzir automaticamente os nomes das pastas na interface do GitHub, use os nomes reais que aparecem na URL do arquivo. Os comandos abaixo assumem a estrutura padrão em inglês: `notebooks/`, `results/`, `paper/`, `scripts/` e `Docs/`.
+
 ---
 
 ## 6. Instalação
@@ -152,8 +156,8 @@ tvgd-public-tests/
 Clone o repositório:
 
 ```bash
-git clone https://github.com/marcelobauman82-netizen/tvgd-public-tests.git
-cd tvgd-public-tests
+git clone https://github.com/marcelobauman82-netizen/TVGD-Exames-Publicos.git
+cd TVGD-Exames-Publicos
 ```
 
 Crie um ambiente Python, se desejar:
@@ -234,7 +238,20 @@ O objetivo desse painel é reunir, em um só lugar, os principais resultados, se
 
 ---
 
-## 9. Dados externos
+## 9. Documentação complementar
+
+A pasta [`Docs/`](Docs/) contém documentação de apoio:
+
+- [`Docs/theory_summary.md`](Docs/theory_summary.md): resumo teórico da TVGD;
+- [`Docs/validation_map.md`](Docs/validation_map.md): mapa dos testes públicos;
+- [`Docs/known_limitations.md`](Docs/known_limitations.md): limitações conhecidas;
+- [`Docs/reproducibility_guide.md`](Docs/reproducibility_guide.md): guia de reprodutibilidade;
+- [`Docs/data_sources.md`](Docs/data_sources.md): fontes de dados usadas ou previstas;
+- [`Docs/falsifiability.md`](Docs/falsifiability.md): critérios de falsificação.
+
+---
+
+## 10. Dados externos
 
 Alguns testes dependem de bases públicas externas. Entre elas:
 
@@ -251,11 +268,11 @@ A separação entre código e dados pesados foi mantida para facilitar a publica
 
 ---
 
-## 10. Resultados principais resumidos
+## 11. Resultados principais resumidos
 
 Alguns resultados consolidados nos testes internos e nos scripts públicos:
 
-### 10.1 Regime galáctico
+### 11.1 Regime galáctico
 
 A função
 
@@ -271,7 +288,7 @@ g_{\rm TVGD}\approx\sqrt{g_{\rm bar}a_0}.
 
 Em amostras limpas do SPARC, a TVGD apresenta resíduos centrados próximos de zero e erro médio reduzido após remoção de outliers observacionais.
 
-### 10.2 Validação externa com LITTLE THINGS
+### 11.2 Validação externa com LITTLE THINGS
 
 Em teste externo efetivo com LITTLE THINGS, a família exponencial próxima de \(\beta\approx1.1\) supera o modelo bariônico puro.
 
@@ -281,7 +298,7 @@ Resultado registrado:
 Status: PASSOU_FORTE_EXTRISK1B_LITTLE_THINGS_EXTERNO
 ```
 
-### 10.3 Buracos negros
+### 11.3 Buracos negros
 
 O setor de buracos negros preserva os benchmarks externos de Schwarzschild:
 
@@ -299,7 +316,7 @@ b_{\rm shadow}/r_s \approx 2.598076.
 
 A estrutura interna é regularizada por uma saturação efetiva do vácuo, evitando a singularidade no modelo efetivo testado.
 
-### 10.4 Covariante efetiva e PPN
+### 11.4 Covariante efetiva e PPN
 
 O setor covariante efetivo possui ramos que preservam:
 
@@ -314,7 +331,7 @@ Resultado registrado:
 Status: PASSOU_FORTE_COVRISK_PPN
 ```
 
-### 10.5 Crescimento de estruturas
+### 11.5 Crescimento de estruturas
 
 Em RSD/\(f\sigma_8\), a TVGD V1.1 fica praticamente indistinguível de ΛCDM em teste diagonal efetivo.
 
@@ -324,7 +341,7 @@ Resultado registrado:
 Status: PASSOU_FORTE_COVRISK8_RSD_FSIGMA8
 ```
 
-### 10.6 Tensão de Hubble
+### 11.6 Tensão de Hubble
 
 A TVGD possui um setor efetivo de transição estrutural capaz de conectar um valor primordial próximo de
 
@@ -342,7 +359,7 @@ Esse setor é promissor, mas ainda exige validação formal com likelihoods comp
 
 ---
 
-## 11. Falsificabilidade
+## 12. Falsificabilidade
 
 A TVGD pode ser enfraquecida ou derrubada por observações como:
 
@@ -357,7 +374,7 @@ A teoria é construída para ser testável. O objetivo do repositório é permit
 
 ---
 
-## 12. Limitações atuais
+## 13. Limitações atuais
 
 A TVGD ainda está em desenvolvimento. Entre os pontos em aberto:
 
@@ -371,7 +388,7 @@ A TVGD ainda está em desenvolvimento. Entre os pontos em aberto:
 
 ---
 
-## 13. Como rodar os principais scripts
+## 14. Como rodar os principais scripts
 
 ### Quickstart
 
@@ -417,7 +434,7 @@ python notebooks/main_validation/17_covrisk_scalar_vector_ppn.py
 
 ---
 
-## 14. Como interpretar os resultados
+## 15. Como interpretar os resultados
 
 Os resultados devem ser interpretados como validação efetiva inicial, não como prova final.
 
@@ -449,7 +466,7 @@ A TVGD deve ser avaliada pela cadeia completa de testes, não por um único resu
 
 ---
 
-## 15. Sobre matéria escura e energia escura
+## 16. Sobre matéria escura e energia escura
 
 A TVGD não parte da hipótese de que matéria escura e energia escura sejam componentes fundamentais. Em vez disso, tenta reinterpretar parte dos fenômenos atribuídos a esses setores como efeitos de resposta estrutural do vácuo gravitacional.
 
@@ -461,7 +478,7 @@ A pergunta central da TVGD é:
 
 ---
 
-## 16. Filosofia do projeto
+## 17. Filosofia do projeto
 
 Este repositório segue três princípios:
 
@@ -471,7 +488,7 @@ Este repositório segue três princípios:
 
 ---
 
-## 17. Como citar
+## 18. Como citar
 
 Enquanto o artigo formal estiver em preparação, cite este repositório como:
 
@@ -480,11 +497,11 @@ Bauman, M. TVGD — Teoria do Vácuo Gravitacional Dispersivo:
 public validation repository. GitHub repository, 2026.
 ```
 
-Um arquivo `CITATION.cff` pode ser adicionado para facilitar citações automáticas pelo GitHub.
+O arquivo [`CITATION.cff`](CITATION.cff) também fornece metadados de citação para o GitHub.
 
 ---
 
-## 18. Aviso científico
+## 19. Aviso científico
 
 Este projeto apresenta uma teoria efetiva alternativa/em desenvolvimento.
 
@@ -494,8 +511,8 @@ A TVGD não é apresentada como teoria final consolidada, mas como um programa d
 
 ---
 
-## 19. Contato
+## 20. Contato
 
 **Autor:** Marcelo Bauman  
 **GitHub:** https://github.com/marcelobauman82-netizen  
-**Repositório:** https://github.com/marcelobauman82-netizen/tvgd-public-tests
+**Repositório:** https://github.com/marcelobauman82-netizen/TVGD-Exames-Publicos
