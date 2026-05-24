@@ -1,4 +1,3 @@
-[README_corrigido.md](https://github.com/user-attachments/files/28194645/README_corrigido.md)
 # TVGD — Teoria do Vácuo Gravitacional Dispersivo
 
 **Autor:** Marcelo Bauman  
