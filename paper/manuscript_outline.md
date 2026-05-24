@@ -289,43 +289,23 @@ This section must remain cautious: it requires complete likelihood validation us
 
 This section evaluates whether the effective spacetime response of TVGD preserves the observed growth of large-scale structure.
 
-At sub-horizon scales, the matter density contrast can be described by an effective linear growth equation,
+At sub-horizon scales, the matter density contrast can be described by an effective linear growth equation:
 
-```math
-\ddot{\delta}_m
-+
-2H\dot{\delta}_m
--
-4\pi G_{\rm eff}(a)\rho_m\delta_m
-=
-0 .
-```
+**delta_m_ddot + 2 H delta_m_dot - 4 pi G_eff(a) rho_m delta_m = 0**
 
-The public validation program compares the TVGD effective background and growth sector with RSD and \(f\sigma_8(z)\) data.
+The public validation program compares the TVGD effective background and growth sector with RSD and f_sigma8(z) data.
 
-In the tested TVGD V1.1 branch, the growth history remains very close to flat \(\Lambda\)CDM in the effective audits. Representative deviations are
+In the tested TVGD V1.1 branch, the growth history remains very close to flat Lambda-CDM in the effective audits. Representative deviations are:
 
-```math
-\max |\Delta D|
-\simeq
-0.066\% ,
-```
+**max |Delta D| ≈ 0.066%**
 
-```math
-\max |\Delta f|
-\simeq
-0.097\% ,
-```
+**max |Delta f| ≈ 0.097%**
 
-```math
-\max |\Delta f\sigma_8|
-\simeq
-0.065\% .
-```
+**max |Delta f_sigma8| ≈ 0.065%**
 
 This suggests that the TVGD background and structural sector can remain compatible with current growth constraints while allowing mild late-time changes in clustering.
 
-This sector should be presented as **compatible and promising**, not as closed. A final conclusion requires full likelihood analyses with covariance matrices, survey-specific corrections and comparison with \(\Lambda\)CDM, MOND-like relativistic models and halo-based models.
+This sector should be presented as compatible and promising, not as closed. A final conclusion requires full likelihood analyses with covariance matrices, survey-specific corrections and comparison with Lambda-CDM, MOND-like relativistic models and halo-based models.
 
 ---
 
@@ -333,55 +313,35 @@ This sector should be presented as **compatible and promising**, not as closed. 
 
 This section discusses the lensing sector of TVGD.
 
-In the weak-field regime, the same structural response that modifies the effective acceleration can also be interpreted as an apparent amplification in lensing observables. The effective amplification is associated with
+In the weak-field regime, the same structural response that modifies the effective acceleration can also be interpreted as an apparent amplification in lensing observables.
 
-```math
-\alpha_{\rm lens}(u)
-\simeq
-\frac{1}{P(u)} .
-```
+The effective amplification is:
 
-The minimal response function remains
+**alpha_lens(u) ≈ 1 / P(u)**
 
-```math
-P(u)
-=
-1-e^{-u}.
-```
+The minimal response function remains:
+
+**P(u) = 1 - exp(-u)**
 
 The lensing program tests whether the same response that works in galaxies can also reproduce weak-lensing and strong-lensing observables without introducing independent dark matter halos as fundamental components.
 
-A useful consistency requirement is that the fitted lensing components remain physical. For example,
+A useful physical consistency requirement is:
 
-```math
-A_{\rm TVGD}
-\geq
-0 ,
-```
+**A_TVGD >= 0**
 
-```math
-A_{\rm 2h}
-\geq
-0 .
-```
+and:
 
-A representative HSC-like effective audit gives
+**A_2h >= 0**
 
-```math
-\chi^2
-\simeq
-618.5 ,
-```
+A representative HSC-like effective audit gives:
 
-```math
-\chi^2_\nu
-\simeq
-3.11 .
-```
+**chi2 ≈ 618.5**
+
+**chi2_red ≈ 3.11**
 
 This should be interpreted as a useful non-catastrophic lensing consistency result, not as a final precision fit.
 
-The next step is a full treatment of projected baryonic mass, covariance matrices, survey systematics, comparison with halo models and joint consistency with the same \(P(u)\) used in the galactic sector.
+The next step is a full treatment of projected baryonic mass, covariance matrices, survey systematics, comparison with halo models and joint consistency with the same P(u) used in the galactic sector.
 
 ---
 
@@ -389,70 +349,44 @@ The next step is a full treatment of projected baryonic mass, covariance matrice
 
 This section presents the strong-field sector of TVGD.
 
-The black-hole model is based on the idea that the structural response of the spacetime vacuum saturates in the compact regime. A representative accumulated structural charge is
+The black-hole model is based on the idea that the structural response of the spacetime vacuum saturates in the compact regime.
 
-```math
-Q_\psi(x)
-=
-1-
-\exp\left[
--\left(
-\frac{x}{x_c}
-\right)^n
-\right],
-\qquad
-x
-=
-\frac{r}{r_s}.
-```
+A representative accumulated structural charge is:
 
-The corresponding effective metric function can be written as
+**Q_psi(x) = 1 - exp[-(x / x_c)^n]**
 
-```math
-A(x)
-=
-1-
-\frac{Q_\psi(x)}{x}.
-```
+with:
 
-For \(x\gg x_c\), the exterior approaches the Schwarzschild form. The tested branch preserves the classical external benchmarks,
+**x = r / r_s**
 
-```math
-\frac{r_h}{r_s}
-\simeq
-1 ,
-```
+The corresponding effective metric function can be written as:
 
-```math
-\frac{r_{\rm ph}}{r_s}
-\simeq
-1.5 ,
-```
+**A(x) = 1 - Q_psi(x) / x**
 
-```math
-\frac{b_{\rm shadow}}{r_s}
-\simeq
-2.598076 .
-```
+For x >> x_c, the exterior approaches the Schwarzschild form.
+
+The tested branch preserves the classical external benchmarks:
+
+**r_h / r_s ≈ 1**
+
+**r_ph / r_s ≈ 1.5**
+
+**b_shadow / r_s ≈ 2.598076**
 
 The purpose of the saturation is to regularize the effective core while leaving the observable exterior almost unchanged.
 
-For a saturation branch of the form above, the effective central-curvature scaling can be summarized as
+For a saturation branch of the form above, the effective central-curvature scaling can be summarized as:
 
-```math
-K
-\sim
-x^{2n-6}.
-```
+**K ~ x^(2n - 6)**
 
 Therefore:
 
 | Branch | Core behavior |
 |---|---|
-| \(n<3\) | divergent effective core |
-| \(n=3\) | finite limiting core |
-| \(n>3\) | regularized core with \(K\to 0\) |
-| \(n\geq 6\) | conservative regular branch used in strong tests |
+| n < 3 | divergent effective core |
+| n = 3 | finite limiting core |
+| n > 3 | regularized core with K -> 0 |
+| n >= 6 | conservative regular branch used in strong tests |
 
 This sector is one of the strongest theoretical bridges in TVGD: the same idea of structural saturation appears in compact objects, cosmology and the temporal sector.
 
@@ -464,40 +398,25 @@ The final task is to derive the strong-field saturation directly from the comple
 
 This section discusses delayed radio emission in tidal disruption events as a possible observational window into structural time.
 
-A useful dimensionless delay index is
+A useful dimensionless delay index is:
 
-```math
-\Xi_{\rm delay}
-=
-\log_{10}
-\left(
-\frac{t_{\rm radio}}{t_g}
-\right),
-\qquad
-t_g
-=
-\frac{GM_{\rm BH}}{c^3}.
-```
+**Xi_delay = log10(t_radio / t_g)**
+
+with:
+
+**t_g = G M_BH / c^3**
 
 In TVGD, delayed emission can be interpreted as a possible consequence of structural-time suppression near a compact saturated region. The same spacetime response that regularizes the core may also delay the release, propagation or observability of energetic outflows.
 
-Preliminary curated samples suggest an extreme temporal regime,
+Preliminary curated samples suggest an extreme temporal regime:
 
-```math
-\Xi_{\rm delay}
->
-6 .
-```
+**Xi_delay > 6**
 
 This means that the observed radio delay can exceed the natural gravitational timescale by more than six orders of magnitude.
 
-A preliminary comparison between delayed and prompt controls gives
+A preliminary comparison between delayed and prompt controls gives:
 
-```math
-p
-\simeq
-0.00558 .
-```
+**p ≈ 0.00558**
 
 This is a promising result, but it must be treated cautiously. Delayed TDE emission can also depend on jet launching, circumnuclear material, viewing angle, fallback rate and radio detectability.
 
@@ -509,31 +428,15 @@ In the manuscript, this sector should be presented as a falsifiable candidate si
 
 This section explores whether the same structural saturation that regularizes compact objects can also regularize the early Universe.
 
-A representative effective Friedmann form is
+A representative effective Friedmann form is:
 
-```math
-H^2
-=
-H_0^2
-\left[
-\left(
-\Omega_{m0}a^{-3}
-+
-\Omega_{r0}a^{-4}
-\right)
-Q_\psi(a)
--
-\Omega_{\rm rep}a^{-6}
-\right].
-```
+**H^2 = H0^2 [(Omega_m0 a^(-3) + Omega_r0 a^(-4)) Q_psi(a) - Omega_rep a^(-6)]**
 
-In this model, high-density collapse can be halted by an effective structural counter-pressure. In the tested branch, the scale factor reaches a finite minimum value,
+In this model, high-density collapse can be halted by an effective structural counter-pressure.
 
-```math
-a_{\rm min}
-\simeq
-0.034 ,
-```
+In the tested branch, the scale factor reaches a finite minimum value:
+
+**a_min ≈ 0.034**
 
 before entering an expanding phase.
 
@@ -549,21 +452,15 @@ This section discusses possible large-scale residual memory signatures of the sp
 
 The TVGD framework allows a weak primordial or structural anisotropy mode to survive as a small late-time residual. This can be searched for in independent observables such as polarized quasar orientations and low-redshift expansion anisotropies.
 
-In the quasar-orientation sector, pair-wise estimators applied to polarized quasar data show a robust quadrupolar spin-2 alignment signal over large comoving scales. A representative result is
+In the quasar-orientation sector, pair-wise estimators applied to polarized quasar data show a robust quadrupolar spin-2 alignment signal over large comoving scales.
 
-```math
-p_{C2}
-\simeq
-0.0002 .
-```
+A representative result is:
 
-On larger scales, around \(5000-10000\,{\rm Mpc}\), the correlation can flip sign. A representative behavior is
+**p_C2 ≈ 0.0002**
 
-```math
-C_2
-\simeq
--0.166 .
-```
+On larger scales, around 5000-10000 Mpc, the correlation can flip sign. A representative behavior is:
+
+**C2 ≈ -0.166**
 
 This sign inversion is qualitatively compatible with a quadrupolar geometric structure, but the small sample size and possible astrophysical or observational systematics must be emphasized.
 
@@ -571,45 +468,90 @@ The Pantheon+ dipole sector provides a separate possible connection to local exp
 
 ---
 
-## 19. Public Verification Package and Falsifiability Protocol
+## 19. Stability, Causality and PPN Constraints
 
-This section documents the public verification package associated with TVGD.
+This section summarizes scalar, vector and tensor consistency checks.
 
-The repository provides:
+The scalar structural sector has an effective propagation speed:
 
-- public validation scripts;
-- a reproducibility quickstart;
-- a model-comparison summary;
-- documentation of known limitations;
-- data-source notes;
-- falsifiability criteria;
+**c_s^2 = P(u) / [P(u) + u^2 exp(-u)]**
+
+In the tested branch:
+
+**0 < c_s^2 <= 1**
+
+The vector sector admits a branch satisfying:
+
+**c1 + c3 = 0**
+
+and therefore:
+
+**c_T = 1**
+
+This section will summarize scalar, vector, tensor and PPN consistency checks, while noting that a full Hamiltonian analysis of the complete coupled theory remains future work.
+
+---
+
+## 20. Falsifiability
+
+Explicit observational conditions that could weaken or falsify TVGD:
+
+- clean galaxy data rejecting P(u) = 1 - exp(-u);
+- group and cluster redshift data rejecting the predicted structural-time ladder;
+- lensing data incompatible with the same amplification factor;
+- PPN or gravitational-wave constraints excluding the covariant branch;
+- RSD, CMB, BAO or supernova likelihoods rejecting the cosmological sector;
+- black-hole shadows or ringdowns rejecting the saturation model;
+- TDE samples failing to show the predicted structural-delay hierarchy;
+- quasar and supernova anisotropy tests failing under independent replication.
+
+---
+
+## 21. Public Verification Package
+
+This section describes the public GitHub repository.
+
+It will document:
+
+- validation scripts;
+- reproducibility quickstart;
+- known limitations;
+- data sources;
+- falsifiability checklist;
 - citation metadata;
-- requirements for reproducing the tests.
+- requirements file;
+- output expectations.
 
 The purpose is to make TVGD auditable. Every major claim should be connected to a script, a dataset, a diagnostic output or a falsification criterion.
-
-Core falsification routes include:
-
-1. clean galaxy samples rejecting \(P(u)=1-e^{-u}\);
-2. weak or strong lensing data rejecting the same amplification law;
-3. PPN or gravitational-wave constraints excluding the covariant branch;
-4. RSD, CMB, BAO or supernova likelihoods rejecting the cosmological sector;
-5. black-hole shadows or ringdowns rejecting the saturation model;
-6. TDE samples failing to show the predicted structural-delay hierarchy;
-7. quasar and supernova anisotropy tests failing under independent replication.
 
 The public repository should be presented not as proof of final correctness, but as the first reproducible validation layer of the theory.
 
 ---
 
-## 20. Final Manuscript Framing
+## 22. Known Limitations
 
-The final manuscript should present TVGD as a unified effective spacetime theory in development.
+Current limitations:
 
-The main message is:
+- final fundamental action still under development;
+- complete coupled field equations still need final derivation;
+- covariant conservation must be demonstrated explicitly for the full system;
+- complete cosmological perturbations are still required;
+- the fundamental origin of a0 must be rigorously derived;
+- structural-time predictions require catalog-level validation;
+- likelihood-level statistical validation is required;
+- independent reproduction remains essential.
 
-> TVGD is not only a galactic rotation-curve model. It is an effective covariant spacetime-response theory connecting galactic acceleration, structural time, cosmological evolution, lensing, growth of structure and black-hole saturation.
+These limitations do not mean absence of a covariant basis. They mean that TVGD is an advanced effective spacetime theory still moving toward a final formulation.
 
-The public package supports this framing by making the validation chain reproducible and falsifiable.
+---
 
+## 23. Conclusion
+
+The conclusion will present TVGD as a complete effective spacetime-response theory in development.
+
+TVGD is not only a galactic fit. It has an effective covariant layer, recovers local gravity through screening, explains galactic behavior through structural vacuum response, introduces structural time as a physical rate of evolution, contains a cosmological/time sector, has a strong-field saturation sector, and is explicitly falsifiable through public validation scripts.
+
+Final statement:
+
+**TVGD should be presented as an effective covariant spacetime theory under development, with public tests, structural-time predictions and a clear path toward formal publication.**
 
