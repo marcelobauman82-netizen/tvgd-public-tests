@@ -19,25 +19,39 @@ Este repositório disponibiliza códigos públicos para auditoria, reprodução,
 
 ## 2. Equação fenomenológica central
 
-No regime galáctico, a resposta principal usada nos testes públicos é:
+No regime galáctico, a resposta principal usada nos testes públicos é
 
-**P(u) = 1 − exp(−u)**
+```math
+P(u)=1-e^{-u}.
+```
 
-com:
+A variável adimensional é
 
-**u = sqrt(g_bar / a0)**
+```math
+u=\sqrt{\frac{g_{\rm bar}}{a_0}}.
+```
 
-A aceleração efetiva é escrita como:
+A aceleração efetiva é escrita como
 
-**g_TVGD = g_bar / P(u)**
+```math
+g_{\rm TVGD}=\frac{g_{\rm bar}}{P(u)}.
+```
 
-No limite de baixa aceleração, quando **u << 1**, temos:
+No limite de baixa aceleração, quando \(u\ll 1\), vale a aproximação
 
-**P(u) ≈ u**
+```math
+P(u)\simeq u.
+```
 
-Portanto:
+Portanto,
 
-**g_TVGD ≈ sqrt(g_bar · a0)**
+```math
+g_{\rm TVGD}
+\simeq
+\frac{g_{\rm bar}}{\sqrt{g_{\rm bar}/a_0}}
+=
+\sqrt{g_{\rm bar}a_0}.
+```
 
 Esse limite reproduz uma relação de aceleração radial profunda do tipo MOND-like, mas dentro da interpretação da TVGD como resposta estrutural do vácuo.
 
@@ -45,16 +59,18 @@ Esse limite reproduz uma relação de aceleração radial profunda do tipo MOND-
 
 ## 3. Interpretação física
 
-Na TVGD, a função **P(u)** representa a fração efetiva de resposta gravitacional estrutural do vácuo.
+Na TVGD, a função \(P(u)\) representa a fração efetiva de resposta gravitacional estrutural do vácuo.
 
-O fator de amplificação efetiva é:
+O fator de amplificação efetiva é
 
-**alpha(u) = 1 / P(u)**
+```math
+\alpha(u)=\frac{1}{P(u)}.
+```
 
 De maneira qualitativa:
 
-- em regimes solares e laboratoriais, **u >> 1**, então **P(u) → 1**;
-- em galáxias e regiões de baixa aceleração, **P(u) < 1**, produzindo amplificação efetiva;
+- em regimes solares e laboratoriais, \(u\gg 1\), então \(P(u)\to 1\);
+- em galáxias e regiões de baixa aceleração, \(P(u)<1\), produzindo amplificação efetiva;
 - em buracos negros, a teoria usa saturação estrutural do vácuo para preservar o exterior e regularizar o núcleo efetivo;
 - em cosmologia, a resposta estrutural pode aparecer como uma transição temporal efetiva;
 - na formulação covariante efetiva, a TVGD conecta campo escalar, vetor temporal, resposta projetada do vácuo e setores de saturação.
@@ -65,24 +81,40 @@ De maneira qualitativa:
 
 A TVGD não deve mais ser descrita como uma teoria sem covariante. O estágio atual é o de uma **teoria efetiva covariante avançada**.
 
-A Camada II pode ser resumida por uma ação efetiva com setores:
+A Camada II pode ser resumida por uma ação efetiva com setores
 
-**S_TVGD = S_g + S_proj + S_theta + S_U + S_lambda + S_m**
-
-onde:
+```math
+S_{\rm TVGD}
+=
+S_g
++
+S_{\rm proj}
++
+S_{\theta}
++
+S_U
++
+S_{\lambda}
++
+S_m.
+```
 
 | Termo | Papel físico |
 |---|---|
-| **S_g** | setor gravitacional métrico |
-| **S_proj** | resposta estrutural projetada do vácuo |
-| **S_theta** | setor cosmológico homogêneo |
-| **S_U** | setor vetorial tipo Einstein-Aether |
-| **S_lambda** | restrição de normalização do vetor temporal |
-| **S_m** | matéria bariônica |
+| \(S_g\) | setor gravitacional métrico |
+| \(S_{\rm proj}\) | resposta estrutural projetada do vácuo |
+| \(S_{\theta}\) | setor cosmológico homogêneo |
+| \(S_U\) | setor vetorial tipo Einstein–Aether |
+| \(S_{\lambda}\) | restrição de normalização do vetor temporal |
+| \(S_m\) | matéria bariônica |
 
 O setor vetorial admite um ramo compatível com velocidade tensorial igual à da luz:
 
-**c1 + c3 = 0 ⇒ c_T = 1**
+```math
+c_1+c_3=0
+\quad\Rightarrow\quad
+c_T=1.
+```
 
 Isso é importante para compatibilidade com restrições de ondas gravitacionais.
 
@@ -96,12 +128,12 @@ Este repositório contém códigos públicos de validação para os seguintes se
 
 | Setor | Objetivo | Status atual |
 |---|---|---|
-| Galáxias / SPARC | Testar a relação g_bar → g_TVGD | Evidência robusta/promissora |
+| Galáxias / SPARC | Testar a relação \(g_{\rm bar}\to g_{\rm TVGD}\) | Evidência robusta/promissora |
 | LITTLE THINGS | Validação externa em galáxias anãs | Passou forte como teste externo efetivo |
 | Buracos negros | Preservar horizonte, fótonsfera e sombra com núcleo regular | Passou forte nos benchmarks efetivos |
-| Cosmologia de fundo | Checar compatibilidade com expansão tipo Lambda-CDM | Compatível em testes efetivos |
-| Tensão de Hubble | Modelar transição estrutural entre H0 primordial e local | Promissor, ainda em desenvolvimento |
-| RSD / fsigma8 | Verificar crescimento de estruturas | Compatível com Lambda-CDM em teste diagonal |
+| Cosmologia de fundo | Checar compatibilidade com expansão tipo \(\Lambda\)CDM | Compatível em testes efetivos |
+| Tensão de Hubble | Modelar transição estrutural entre \(H_0\) primordial e local | Promissor, ainda em desenvolvimento |
+| RSD / \(f\sigma_8\) | Verificar crescimento de estruturas | Compatível com \(\Lambda\)CDM em teste diagonal |
 | PPN / covariante efetiva | Checar riscos solares, vetoriais e velocidade das ondas gravitacionais | Passou forte no ramo efetivo testado |
 | Falsificabilidade | Definir previsões que podem derrubar a teoria | Checklist público incluído |
 
@@ -215,7 +247,7 @@ As saídas serão salvas em:
 results/22_model_comparison_aic_bic_summary/
 ```
 
-Esse painel reúne os principais resultados, setores, status, valores de chi2, chi2_red, AIC/BIC aproximado e notas de interpretação.
+Esse painel reúne os principais resultados, setores, status, valores de \(\chi^2\), \(\chi^2_{\rm red}\), AIC/BIC aproximado e notas de interpretação.
 
 ---
 
@@ -239,7 +271,7 @@ Alguns testes dependem de bases públicas externas. Entre elas:
 - SPARC rotation curves;
 - LITTLE THINGS;
 - Pantheon+SH0ES;
-- compilações de fsigma8;
+- compilações de \(f\sigma_8\);
 - dados de lenteamento fraco;
 - catálogos cosmológicos e astrofísicos auxiliares.
 
@@ -253,19 +285,23 @@ A separação entre código e dados pesados foi mantida para facilitar a publica
 
 ### 12.1 Regime galáctico
 
-A função central é:
+A função central é
 
-**P(u) = 1 − exp(−u)**
+```math
+P(u)=1-e^{-u}.
+```
 
-Ela reproduz o limite profundo:
+Ela reproduz o limite profundo
 
-**g_TVGD ≈ sqrt(g_bar · a0)**
+```math
+g_{\rm TVGD}\simeq \sqrt{g_{\rm bar}a_0}.
+```
 
 Em amostras limpas do SPARC, a TVGD apresenta resíduos centrados próximos de zero e erro médio reduzido após remoção de outliers observacionais.
 
 ### 12.2 Validação externa com LITTLE THINGS
 
-Em teste externo efetivo com LITTLE THINGS, a família exponencial próxima de **beta ≈ 1.1** supera o modelo bariônico puro.
+Em teste externo efetivo com LITTLE THINGS, a família exponencial próxima de \(\beta\simeq 1.1\) supera o modelo bariônico puro.
 
 Resultado registrado:
 
@@ -277,10 +313,12 @@ Status: PASSOU_FORTE_EXTRISK1B_LITTLE_THINGS_EXTERNO
 
 O setor de buracos negros preserva os benchmarks externos de Schwarzschild:
 
-```text
-r_h / r_s ≈ 1
-r_ph / r_s ≈ 1.5
-b_shadow / r_s ≈ 2.598076
+```math
+r_h/r_s\simeq 1,
+\qquad
+r_{\rm ph}/r_s\simeq 1.5,
+\qquad
+b_{\rm shadow}/r_s\simeq 2.598076.
 ```
 
 A estrutura interna é regularizada por saturação efetiva do vácuo, evitando a singularidade no modelo efetivo testado.
@@ -289,7 +327,7 @@ A estrutura interna é regularizada por saturação efetiva do vácuo, evitando 
 
 O setor covariante efetivo possui ramos que preservam:
 
-- velocidade tensorial c_T = 1;
+- velocidade tensorial \(c_T=1\);
 - estabilidade dos modos no ramo auditado;
 - limites PPN fortes;
 - compatibilidade solar efetiva.
@@ -302,7 +340,7 @@ Status: PASSOU_FORTE_COVRISK_PPN
 
 ### 12.5 Crescimento de estruturas
 
-Em RSD / fsigma8, a TVGD V1.1 fica praticamente indistinguível de Lambda-CDM em teste diagonal efetivo.
+Em RSD / \(f\sigma_8\), a TVGD V1.1 fica praticamente indistinguível de \(\Lambda\)CDM em teste diagonal efetivo.
 
 Resultado registrado:
 
@@ -312,16 +350,16 @@ Status: PASSOU_FORTE_COVRISK8_RSD_FSIGMA8
 
 ### 12.6 Tensão de Hubble
 
-A TVGD possui um setor efetivo de transição estrutural capaz de conectar um valor primordial próximo de:
+A TVGD possui um setor efetivo de transição estrutural capaz de conectar um valor primordial próximo de
 
-```text
-H0 ≈ 67.4
+```math
+H_0\simeq 67.4
 ```
 
-a um valor local efetivo maior, próximo de:
+a um valor local efetivo maior, próximo de
 
-```text
-H0 ≈ 72 - 73
+```math
+H_0\simeq 72-73.
 ```
 
 Esse setor é promissor, mas ainda exige validação formal com likelihoods completas, CMB, BAO, supernovas, covariâncias e controle de efeitos sistemáticos.
@@ -332,12 +370,12 @@ Esse setor é promissor, mas ainda exige validação formal com likelihoods comp
 
 A TVGD pode ser enfraquecida ou derrubada por observações como:
 
-1. curvas de rotação galácticas limpas que violem sistematicamente a forma **P(u) = 1 − exp(−u)**;
-2. lentes gravitacionais que exijam amplificações incompatíveis com **alpha(u) = 1/P(u)**;
+1. curvas de rotação galácticas limpas que violem sistematicamente a forma \(P(u)=1-e^{-u}\);
+2. lentes gravitacionais que exijam amplificações incompatíveis com \(\alpha(u)=1/P(u)\);
 3. dados PPN ou ondas gravitacionais que excluam o ramo covariante efetivo saudável;
-4. medidas de fsigma8, CMB, BAO ou supernovas que gerem tensão estatística forte contra a transição cosmológica proposta;
+4. medidas de \(f\sigma_8\), CMB, BAO ou supernovas que gerem tensão estatística forte contra a transição cosmológica proposta;
 5. sombras de buracos negros ou ringdowns que rejeitem a saturação estrutural regularizada;
-6. catálogos externos independentes que mostrem que a função **P(u)** falha de forma sistemática em diferentes classes de galáxias.
+6. catálogos externos independentes que mostrem que a função \(P(u)\) falha de forma sistemática em diferentes classes de galáxias.
 
 A teoria é construída para ser testável. O objetivo do repositório é permitir que outros pesquisadores rodem, critiquem e tentem falsificar os resultados.
 
@@ -351,9 +389,9 @@ A TVGD está em desenvolvimento avançado. As limitações essenciais são:
 - derivar explicitamente todas as equações acopladas;
 - demonstrar conservação covariante total do tensor energia-momento;
 - implementar perturbações cosmológicas completas;
-- deduzir de forma rigorosa a origem de a0;
+- deduzir de forma rigorosa a origem de \(a_0\);
 - substituir testes efetivos por likelihoods completas com covariâncias;
-- realizar comparação Bayesiana formal contra Lambda-CDM, MOND e modelos com halos;
+- realizar comparação Bayesiana formal contra \(\Lambda\)CDM, MOND e modelos com halos;
 - obter reprodução independente por terceiros.
 
 Essas limitações não significam ausência de base covariante. Significam que a TVGD já tem uma formulação efetiva testável, mas ainda não deve ser apresentada como teoria fundamental final.
