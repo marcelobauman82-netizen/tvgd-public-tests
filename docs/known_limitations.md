@@ -1,637 +1,189 @@
 # TVGD — Limitações Conhecidas e Status da Covariante
 
-Este documento atualiza as limitações conhecidas da **Teoria do Vácuo Gravitacional Dispersivo (TVGD)** à luz do documento `covariante.pdf`.
+Este documento resume, de forma objetiva, o estado atual da Teoria do Vácuo Gravitacional Dispersivo (TVGD) após o desenvolvimento da formulação covariante efetiva.
 
-A conclusão principal é que a TVGD **não está mais no estágio de mera fenomenologia sem base covariante**. O estado atual é mais forte: existe uma **Camada II covariante efetiva**, com ação explícita, campo escalar estrutural, vetor temporal unitário, projetor espacial, setor tipo Einstein-Aether, restrição de normalização, recuperação do limite galáctico, estabilidade efetiva, screening local, setor cosmológico separado e setor forte por saturação estrutural.
+A TVGD não deve mais ser descrita como uma teoria puramente fenomenológica. O estágio atual é mais avançado: a teoria possui uma Camada II covariante efetiva, com ação explícita, campo escalar estrutural, vetor temporal unitário, projetor espacial, setor vetorial tipo Einstein-Aether, restrição de normalização e recuperação do limite galáctico.
 
-Ainda assim, a teoria deve ser apresentada como **formulação covariante efetiva avançada**, não como teoria fundamental final.
-
----
-
-## 1. Resumo honesto do status atual
-
-A TVGD deve ser descrita neste estágio como:
-
-```text
-Teoria efetiva covariante avançada, com ação de Camada II explícita,
-limites físicos recuperados e auditorias de estabilidade preliminares,
-mas ainda sem fechamento fundamental completo.
-```
-
-O avanço importante é que a covariante atual já contém uma ação efetiva consolidada do tipo:
-
-```text
-S_TVGD = S_g + S_proj + S_theta + S_U + S_lambda + S_m
-```
-
-ou, na versão projetada mínima:
-
-```text
-S_TVGD = S_g + S_proj + S_lambda + S_U + S_m
-```
-
-onde:
-
-```text
-S_g       = setor Einstein-Hilbert
-S_proj    = setor estrutural projetado do vácuo
-S_theta   = setor homogêneo/cosmológico
-S_U       = setor vetorial tipo Einstein-Aether
-S_lambda  = restrição de normalização do vetor U
-S_m       = ação da matéria
-```
-
-Portanto, a limitação atual não é mais “falta de covariante”. A limitação correta é:
-
-```text
-falta transformar a Camada II covariante efetiva em uma teoria fundamental final,
-com derivação completa das equações acopladas, conservação total, perturbações
-cosmológicas, estabilidade Hamiltoniana completa e origem rigorosa de a0.
-```
+Ainda assim, a TVGD deve ser apresentada como uma teoria efetiva covariante em desenvolvimento, não como uma teoria fundamental final completamente fechada.
 
 ---
 
-## 2. O que já está forte na covariante
-
-### 2.1 Ação projetada do vácuo
-
-A TVGD usa um campo escalar estrutural `psi` e um vetor temporal unitário `U^mu`.
-
-O projetor espacial é:
-
-```text
-h^{mu nu} = g^{mu nu} + U^mu U^nu
-```
-
-A variável projetada estrutural é:
-
-```text
-Y_s = h^{mu nu} grad_mu psi grad_nu psi / a0^2
-```
-
-Essa construção permite separar a resposta espacial do vácuo no referencial físico definido por `U^mu`.
-
-### 2.2 Recuperação do regime galáctico
-
-No limite quase-estático galáctico:
-
-```text
-U^mu grad_mu psi ≈ 0
-h^{ij} -> delta^{ij}
-```
-
-a equação estrutural reduz para:
-
-```text
-div[ P(u) grad psi ] = 4 pi G rho_bar
-```
-
-Em simetria esférica:
-
-```text
-P(u) g_TVGD = g_bar
-```
-
-logo:
-
-```text
-g_TVGD = g_bar / P(u)
-```
-
-com:
-
-```text
-P(u) = 1 - exp(-u)
-u = sqrt(g_bar / a0)
-```
-
-No limite profundo:
-
-```text
-g_TVGD ≈ sqrt(g_bar * a0)
-```
-
-Assim, a Camada II covariante recupera o núcleo galáctico da TVGD.
-
-### 2.3 A função P(u) não fica apenas como ajuste
-
-O documento covariante registra duas rotas complementares:
-
-1. Uma função cinética covariante `Q_cov(u)` cuja derivada gera:
-
-```text
-P(u) = 1 - exp(-u)
-```
-
-2. Uma ação projetada `H(Y_s)` definida para gerar o fator constitutivo no limite fraco.
-
-Isso fortalece a interpretação de que `P(u)` não é apenas uma curva ajustada, mas uma resposta estrutural derivável de uma função de ação efetiva.
-
-### 2.4 Estabilidade e causalidade efetiva
-
-O núcleo escalar foi auditado com:
-
-```text
-D(u) = P(u) + u^2 exp(-u)
-```
-
-e velocidade efetiva:
-
-```text
-c_s^2 = P(u) / D(u)
-```
-
-O domínio testado satisfaz:
-
-```text
-P(u) > 0
-D(u) > 0
-0 < c_s^2 <= 1
-```
-
-No limite profundo, a velocidade efetiva tende para valor positivo da ordem de `2/3`, e no limite de alta aceleração tende para `1`.
-
-Isso remove, no setor testado, risco imediato de ghost escalar, instabilidade de gradiente e propagação superluminal.
-
-### 2.5 Screening local
-
-Para alta aceleração:
-
-```text
-u >> 1
-P(u) -> 1
-alpha(u) = 1/P(u) -> 1
-```
-
-Logo:
-
-```text
-g_TVGD -> g_bar
-```
-
-Esse mecanismo fornece blindagem local automática para Terra, Sistema Solar, GPS, Shapiro, deflexão solar e órbitas planetárias, dentro do ramo efetivo testado.
-
-### 2.6 Setor vetorial
-
-O setor vetorial é do tipo Einstein-Aether, com coeficientes `c1`, `c2`, `c3`, `c4`.
-
-A condição central usada é:
-
-```text
-c1 + c3 = 0
-```
-
-Isso preserva:
-
-```text
-c_T = 1
-```
-
-ou seja, velocidade tensorial igual à velocidade da luz.
-
-O documento registra ramo de acoplamento fraco com modos positivos e parâmetros PPN preferenciais pequenos. No limite quase-estático galáctico:
-
-```text
-grad U ≈ 0
-L_U ≈ 0
-T_U ≈ 0
-```
-
-Portanto, o setor vetorial não destrói a fonte galáctica recuperada pelo setor projetado.
-
-### 2.7 Restrição de normalização do vetor
-
-A condição:
-
-```text
-U^mu U_mu = -1
-```
-
-é imposta por multiplicador de Lagrange `lambda_U`.
-
-No limite galáctico quase-estático:
-
-```text
-U dot q ≈ 0
-lambda_U ≈ 0
-```
-
-Logo, a restrição não introduz fonte espúria na dinâmica galáctica.
-
-### 2.8 Tensor energia-momento projetado
-
-O setor projetado já possui tensor energia-momento explícito da forma efetiva:
-
-```text
-T_proj = termo isotrópico proporcional a H(Y_s)
-       + termo anisotrópico proporcional a H_Y q_mu q_nu
-```
-
-Nos testes quasi-estáticos, a fonte projetada reproduz a fonte gravitacional efetiva esperada e os termos locais de pressão/isotropia/anisotropia aparecem subdominantes no regime auditado.
-
-Isso é um avanço relevante: o setor já não está apenas como equação de força, mas possui objeto tensorial efetivo.
-
-### 2.9 Cosmologia homogênea
-
-A parte projetada espacial não domina automaticamente o fundo FLRW, pois para campo homogêneo:
-
-```text
-Y_s = 0
-```
-
-Isso é positivo: separa o setor galáctico projetado do setor cosmológico homogêneo.
-
-A evolução de fundo fica carregada pelo setor `theta` ou por uma densidade efetiva do tipo:
-
-```text
-Omega_psi(a)
-```
-
-com parametrização efetiva testável.
-
-Esse ponto evita que o mesmo termo galáctico gere automaticamente uma cosmologia errada.
-
-### 2.10 Buracos negros e saturação estrutural
-
-O setor forte usa uma lei de saturação estrutural do tipo:
-
-```text
-S(x) = 1 - exp[-(x/x_c)^n]
-```
-
-com métrica efetiva:
-
-```text
-A(x) = 1 - S(x)/x
-```
-
-Para `x >> x_c`, recupera-se o exterior de Schwarzschild.
-
-Os benchmarks preservados são:
-
-```text
-x_h = 1
-x_ph = 1.5
-b_shadow / r_s = 2.598076
-x_ISCO ≈ 3
-```
-
-A condição conservadora de regularidade direta do núcleo é:
-
-```text
-n >= 6
-```
-
-Assim, a TVGD possui uma ponte forte entre saturação estrutural local de buracos negros e saturação universal do vácuo, ainda que o acoplamento final desse setor à ação completa permaneça em desenvolvimento.
+## 1. Status atual da covariante
+
+A formulação atual da TVGD já contém uma estrutura covariante efetiva com os seguintes blocos:
+
+- setor gravitacional tipo Einstein-Hilbert;
+- campo escalar estrutural associado à resposta do vácuo;
+- vetor temporal unitário U^mu;
+- projetor espacial associado ao referencial físico definido por U^mu;
+- setor vetorial tipo Einstein-Aether;
+- multiplicador de Lagrange para impor a normalização do vetor;
+- setor cosmológico homogêneo separado;
+- recuperação do limite galáctico;
+- mecanismo de screening em regimes de alta aceleração;
+- extensão efetiva para buracos negros por saturação estrutural.
+
+Portanto, a limitação atual não é a ausência de covariantização. A limitação correta é o fechamento completo da teoria fundamental.
+
+Em outras palavras: a TVGD já possui uma ação covariante efetiva testável, mas ainda precisa transformar essa arquitetura em uma formulação final única, com todas as equações acopladas, conservação covariante total, estabilidade global e perturbações cosmológicas completas.
 
 ---
 
-## 3. O que mudou em relação às limitações antigas
+## 2. O que já está bem estabelecido
 
-A limitação antiga dizia, aproximadamente:
+A Camada II covariante já permite recuperar o regime galáctico da TVGD.
 
-```text
-derivação final que conecte regime galáctico, cosmológico e buracos negros
-dentro da mesma ação efetiva.
-```
+No limite quase-estático, a teoria leva à relação efetiva entre aceleração bariônica e aceleração observada. A função central continua sendo a resposta estrutural do vácuo, dada por P(u) = 1 - exp(-u), com u = sqrt(g_bar/a0).
 
-Essa frase ficou fraca demais para o estágio atual.
+Nesse limite, a teoria recupera a forma g_TVGD = g_bar/P(u). Para baixa aceleração, isso leva ao comportamento profundo g_TVGD ≈ sqrt(g_bar a0).
 
-A versão corrigida deve ser:
+Esse resultado é importante porque mostra que o núcleo galáctico da TVGD não está isolado: ele pode emergir de uma estrutura covariante efetiva.
 
-```text
-A TVGD já possui uma Camada II covariante efetiva que conecta, em nível
-variacional e de limites, o regime galáctico, o setor cosmológico homogêneo,
-o setor vetorial/PPN e o regime forte por saturação. O que ainda falta é fechar
-a teoria fundamental completa: equações acopladas finais, conservação total,
-perturbações cosmológicas, estabilidade Hamiltoniana global e origem rigorosa
-de a0 e dos setores de saturação.
-```
+Também já existe uma interpretação mais forte para a função P(u). Ela pode ser associada a uma função cinética efetiva ou a uma ação projetada do campo estrutural. Assim, P(u) não precisa ser tratada apenas como uma curva empírica ajustada aos dados.
 
 ---
 
-## 4. Limitações reais que permanecem
+## 3. Estabilidade efetiva
 
-### 4.1 Equações acopladas completas
+A formulação atual inclui auditorias de estabilidade no setor escalar e vetorial.
 
-Ainda falta derivar e auditar integralmente o sistema acoplado:
+No setor escalar, os testes indicam que a resposta efetiva permanece positiva e causal no domínio analisado. A velocidade efetiva de propagação permanece dentro do intervalo físico esperado, sem indicar ghost escalar ou instabilidade de gradiente no ramo testado.
 
-```text
-g_{mu nu} + psi + U^mu + theta + lambda_U + matéria
-```
+No setor vetorial, a escolha do ramo c1 + c3 = 0 preserva a velocidade das ondas gravitacionais igual à velocidade da luz. Esse ponto é essencial para compatibilidade com as restrições observacionais de ondas gravitacionais.
 
-A ação existe como Camada II efetiva, mas a teoria final precisa mostrar explicitamente todas as equações de campo e seus limites.
+Os testes PPN também indicam que existe uma região de parâmetros fracos compatível com limites solares fortes.
 
-### 4.2 Conservação covariante total
-
-É necessário verificar explicitamente:
-
-```text
-nabla_mu T_total^{mu nu} = 0
-```
-
-incluindo:
-
-```text
-T_m
-T_proj
-T_theta
-T_U
-T_lambda
-```
-
-Essa checagem é essencial para garantir consistência relativística completa.
-
-### 4.3 Potenciais fracos Phi e Psi
-
-Ainda falta derivar completamente os potenciais métricos fracos:
-
-```text
-Phi
-Psi
-```
-
-e a combinação de lenteamento:
-
-```text
-Phi + Psi
-```
-
-bem como o slip gravitacional:
-
-```text
-Phi - Psi
-```
-
-A TVGD já tem estimativas e fonte anisotrópica controlada, mas falta a derivação relativística final e o confronto sistemático com lentes fracas e fortes.
-
-### 4.4 Perturbações cosmológicas completas
-
-O setor FLRW de fundo é promissor, mas ainda falta implementar o sistema completo em código cosmológico do tipo CLASS/CAMB com:
-
-```text
-delta_psi
-delta_theta
-delta_U
-perturbações métricas
-crescimento de estruturas
-lenteamento CMB
-```
-
-A compatibilidade com CMB de fundo e RSD diagonal é forte preliminarmente, mas a análise final exige likelihoods oficiais.
-
-### 4.5 Estabilidade além do regime quase-estático
-
-A estabilidade escalar, vetorial e PPN foi auditada em ramos efetivos.
-
-Ainda falta uma análise global de:
-
-```text
-Hamiltoniano quadrático completo
-ghosts no sistema acoplado
-instabilidades de gradiente fora do limite quasi-estático
-modos mistos psi-U-g
-estabilidade cosmológica em alto redshift
-```
-
-Esse é um dos pontos mais importantes antes de tratar a covariante como final.
-
-### 4.6 Origem rigorosa de a0
-
-O documento covariante fortalece a interpretação:
-
-```text
-a0 ≈ c H0 / (2 pi)
-```
-
-e mostra que o valor sai na ordem correta de grandeza.
-
-Mas ainda falta derivar rigorosamente o fator `2 pi` a partir de:
-
-```text
-modo fundamental do campo estrutural
-termodinâmica de horizonte
-condição global de relaxamento
-ou princípio de saturação do vácuo
-```
-
-Portanto, `a0` não deve mais ser tratado como parâmetro arbitrário puro, mas ainda não está fundamentalmente deduzido de forma final.
-
-### 4.7 Setor theta
-
-O setor `theta` carrega a evolução homogênea cosmológica e pode representar saturação/relaxamento temporal.
-
-Ainda falta derivar de forma final:
-
-```text
-V_theta(theta)
-Z_theta(theta)
-Omega_psi(a)
-w(a)
-```
-
-a partir de princípio estrutural mais profundo.
-
-### 4.8 Saturação universal
-
-A lei exponencial de saturação está conceitualmente muito forte:
-
-```text
-S(Theta) = 1 - exp(-Theta)
-```
-
-e gera reduções compatíveis com:
-
-```text
-P(u) no regime galáctico
-Q_psi(x) no regime de buracos negros
-Xi(z) no setor temporal/cosmológico
-```
-
-Mas ainda falta formalizar a variável covariante universal `Theta` em todos os regimes.
-
-### 4.9 Comparação Bayesiana e likelihoods
-
-Ainda faltam análises formais com:
-
-```text
-likelihoods oficiais
-matrizes de covariância completas
-priors declarados
-Bayesian evidence
-comparação com Lambda-CDM
-comparação com MOND/RMOND/TeVeS/AQUAL
-comparação com halos NFW
-```
-
-O repositório público atual é uma base de validação e auditoria, não substitui uma análise estatística cosmológica final.
-
-### 4.10 Reprodutibilidade independente
-
-Os scripts públicos são um passo essencial, mas ainda falta:
-
-```text
-reprodução por terceiros
-ambientes congelados
-testes automatizados
-dados versionados
-notebooks com checksums
-relatórios de saída esperada
-```
-
-Esse ponto é importante para responder críticas de overfitting.
+Esses resultados tornam a covariante da TVGD significativamente mais robusta do que uma formulação puramente fenomenológica.
 
 ---
 
-## 5. Setores que devem ser tratados como fortes
+## 4. Screening local
 
-Os seguintes blocos podem ser apresentados como fortes no estágio efetivo:
+A TVGD recupera a gravidade usual em regimes de alta aceleração.
 
-```text
-1. Recuperação do limite galáctico g_TVGD = g_bar / P(u)
-2. Limite profundo g_TVGD ≈ sqrt(g_bar * a0)
-3. Screening local para u >> 1
-4. Estabilidade escalar efetiva: P > 0, D > 0, 0 < c_s^2 <= 1
-5. Setor vetorial com c_T = 1 no ramo c1 + c3 = 0
-6. Restrição U^mu U_mu = -1 sem fonte espúria galáctica
-7. Tensor energia-momento projetado explícito
-8. Separação entre setor projetado galáctico e fundo FLRW
-9. Recuperação dos benchmarks externos de buracos negros
-10. Estrutura de ação covariante de Camada II
-```
+Quando u é grande, P(u) tende a 1. Nesse limite, a aceleração efetiva da TVGD tende à aceleração bariônica usual. Isso fornece um mecanismo natural de screening local.
+
+Esse ponto é necessário para preservar testes como órbitas planetárias, GPS, atraso de Shapiro, deflexão solar da luz e limites PPN.
+
+O screening local é uma das razões pelas quais a TVGD pode modificar regimes galácticos sem destruir imediatamente a física do Sistema Solar.
 
 ---
 
-## 6. Setores que devem ser tratados como promissores, mas não fechados
+## 5. Cosmologia
 
-Os seguintes blocos devem ser descritos com cautela:
+A formulação covariante separa o setor galáctico projetado do setor cosmológico homogêneo.
 
-```text
-1. Origem fundamental de a0
-2. Fator 2 pi em a0 ≈ cH0/(2 pi)
-3. Potenciais Phi e Psi completos
-4. Slip gravitacional em lentes fracas externas
-5. Perturbações cosmológicas completas
-6. Hamiltoniano quadrático do sistema acoplado
-7. Setor theta fundamental
-8. Variável universal de saturação Theta
-9. Conexão final entre saturação primordial e buracos negros
-10. Bayesian evidence contra Lambda-CDM e MOND
-```
+Isso é importante porque o mesmo termo que gera a resposta galáctica não precisa dominar automaticamente o fundo FLRW. A cosmologia pode ser carregada por um setor homogêneo próprio, associado à evolução estrutural do vácuo.
+
+Esse setor permite estudar transições efetivas entre o regime primordial e o regime local, incluindo possíveis aplicações à tensão de Hubble.
+
+Ainda assim, o setor cosmológico não deve ser tratado como fechado. Faltam perturbações cosmológicas completas, implementação formal em CLASS ou CAMB, likelihoods oficiais e confronto conjunto com CMB, BAO, supernovas e crescimento de estruturas.
 
 ---
 
-## 7. Linguagem científica recomendada
+## 6. Buracos negros
 
-Use:
+O setor de buracos negros usa uma saturação estrutural do vácuo para preservar o exterior semelhante ao de Schwarzschild e regularizar o núcleo efetivo.
 
-```text
-A TVGD possui uma formulação covariante efetiva de Camada II.
-```
+Os testes preservam os benchmarks externos principais: horizonte próximo de r_s, fótonsfera próxima de 1.5 r_s e sombra compatível com o valor de Schwarzschild.
 
-Use:
+Isso é um ponto forte, pois permite compatibilidade com observações fortes ao mesmo tempo em que evita a singularidade no modelo efetivo.
 
-```text
-A covariante já recupera os limites galáctico, local, cosmológico de fundo
-e forte efetivo, mas ainda não é uma teoria fundamental final.
-```
-
-Use:
-
-```text
-O setor vetorial possui ramo compatível com c_T = 1 e PPN pequeno.
-```
-
-Use:
-
-```text
-A função P(u) é derivável de uma estrutura de ação efetiva projetada/cinética,
-não apenas de um ajuste fenomenológico.
-```
-
-Evite:
-
-```text
-A covariante está totalmente fechada.
-```
-
-Evite:
-
-```text
-A TVGD já substitui definitivamente Lambda-CDM.
-```
-
-Evite:
-
-```text
-A origem de a0 está provada de forma fundamental.
-```
-
-Evite:
-
-```text
-Todos os modos cosmológicos já foram demonstrados estáveis.
-```
+A limitação atual é que a saturação estrutural de buracos negros ainda precisa ser derivada de forma completa a partir da ação covariante final. A conexão conceitual com a saturação cosmológica e galáctica é forte, mas ainda precisa de fechamento variacional rigoroso.
 
 ---
 
-## 8. Texto curto para substituir no README
+## 7. Origem de a0
 
-Sugestão para a seção de limitações do README:
+A escala a0 é central para o regime galáctico.
 
-```text
-A TVGD já possui uma arquitetura covariante efetiva avançada, com ação de
-Camada II contendo setor estrutural projetado, vetor temporal unitário, setor
-tipo Einstein-Aether, restrição de normalização, setor cosmológico homogêneo
-e recuperação explícita do limite galáctico. A limitação atual não é ausência
-de covariante, mas o fechamento fundamental: derivar todas as equações
-acopladas, verificar conservação covariante total, calcular Phi e Psi,
-implementar perturbações cosmológicas completas, provar estabilidade global
-do sistema acoplado e deduzir rigorosamente a origem de a0 e da variável
-universal de saturação.
-```
+A TVGD já sugere uma conexão natural entre a0 e escalas cosmológicas, especialmente relações da ordem de cH0. Isso reduz a aparência de parâmetro arbitrário.
+
+Mesmo assim, a origem fundamental de a0 ainda não está completamente demonstrada. Falta derivar de forma rigorosa se essa escala emerge de um modo estrutural do vácuo, de uma condição de horizonte, de relaxação cosmológica ou de uma combinação desses fatores.
+
+Portanto, a0 deve ser tratado como uma escala efetiva com forte motivação física, mas ainda não como uma constante fundamental deduzida de primeiros princípios.
 
 ---
 
-## 9. Classificação atual
+## 8. Limitações reais que permanecem
 
-A classificação honesta após o documento covariante é:
+As limitações principais da TVGD, no estágio atual, são:
 
-```text
-TVGD fenomenológica simples: superada.
-TVGD covariante efetiva: forte e avançada.
-TVGD fundamental final: ainda não fechada.
-```
+- derivar todas as equações acopladas da ação covariante completa;
+- demonstrar explicitamente a conservação covariante total do tensor energia-momento;
+- calcular os potenciais fracos Phi e Psi e o slip gravitacional;
+- implementar perturbações cosmológicas completas;
+- provar estabilidade global do sistema acoplado, incluindo modos mistos;
+- deduzir de forma rigorosa a origem de a0;
+- formalizar a variável universal de saturação que conecta galáxias, cosmologia e buracos negros;
+- substituir testes efetivos ou diagonais por likelihoods completas;
+- realizar comparação Bayesiana formal contra Lambda-CDM, MOND e modelos com halos;
+- obter reprodução independente por terceiros.
 
-Ou, em uma frase:
-
-```text
-A TVGD já possui uma ação covariante efetiva testável; o que falta é o
-fechamento fundamental e a validação estatística completa.
-```
+Esses pontos não anulam os avanços já obtidos. Eles definem o que ainda falta para transformar a TVGD de teoria efetiva covariante avançada em teoria fundamental final.
 
 ---
 
-## 10. Conclusão
+## 9. Setores que podem ser apresentados como fortes
 
-O documento `covariante.pdf` muda a forma correta de apresentar as limitações.
+No estado atual, os seguintes blocos podem ser apresentados como fortes dentro da formulação efetiva:
 
-Antes, parecia que a TVGD ainda precisava encontrar uma covariante. Agora, o status correto é diferente:
+- recuperação do limite galáctico;
+- limite profundo g_TVGD ≈ sqrt(g_bar a0);
+- screening local em alta aceleração;
+- existência de ação covariante efetiva de Camada II;
+- setor vetorial com ramo compatível com c_T = 1;
+- compatibilidade PPN no ramo fraco testado;
+- estabilidade efetiva preliminar dos modos escalares e vetoriais;
+- separação entre resposta galáctica projetada e fundo cosmológico homogêneo;
+- preservação dos benchmarks externos de buracos negros;
+- formulação explícita de critérios de falsificabilidade.
 
-```text
-A TVGD já tem uma Camada II covariante efetiva matematicamente explícita,
-com recuperação dos limites físicos principais e auditorias de estabilidade.
-```
+---
 
-O que permanece em aberto é mais alto nível:
+## 10. Setores que devem ser tratados com cautela
 
-```text
-fechar a ação fundamental única,
-derivar o sistema acoplado completo,
-provar conservação e estabilidade global,
-implementar perturbações cosmológicas completas,
-deduzir a origem rigorosa de a0,
-e validar tudo com likelihoods independentes.
-```
+Os seguintes pontos ainda devem ser apresentados como promissores, mas não fechados:
 
-Esse é um status muito mais forte e mais justo para a teoria.
+- origem fundamental de a0;
+- derivação final do setor cosmológico homogêneo;
+- perturbações cosmológicas completas;
+- lenteamento relativístico completo;
+- estabilidade Hamiltoniana global;
+- conexão variacional final entre saturação primordial e buracos negros;
+- comparação Bayesiana formal;
+- validação independente com pipelines externos.
+
+---
+
+## 11. Linguagem recomendada
+
+A forma mais correta de apresentar o estado atual é:
+
+A TVGD possui uma formulação covariante efetiva avançada, capaz de recuperar o regime galáctico, preservar o limite local, incorporar um setor vetorial compatível com c_T = 1 e modelar saturação estrutural em buracos negros. O que ainda falta é o fechamento fundamental completo, com derivação acoplada, conservação total, perturbações cosmológicas, estabilidade global e validação estatística formal.
+
+Essa formulação é mais justa do que dizer que a TVGD “ainda não tem covariante”. Ela tem. O que falta é transformar a covariante efetiva em teoria final.
+
+---
+
+## 12. Classificação atual
+
+A classificação honesta do estágio atual é:
+
+- TVGD como fenomenologia simples: superada;
+- TVGD como teoria covariante efetiva: forte e avançada;
+- TVGD como teoria fundamental final: ainda em desenvolvimento.
+
+Em uma frase:
+
+A TVGD já possui uma ação covariante efetiva testável; o que falta é o fechamento fundamental e a validação estatística completa.
+
+---
+
+## 13. Conclusão
+
+O documento covariante muda a forma correta de apresentar as limitações da TVGD.
+
+Antes, a limitação parecia ser encontrar uma formulação covariante. Agora, o status é mais forte: a TVGD já possui uma Camada II covariante efetiva, com recuperação dos principais limites físicos e auditorias preliminares de estabilidade.
+
+O que permanece em aberto é o nível final da teoria: ação fundamental única, equações acopladas completas, conservação covariante total, estabilidade global, perturbações cosmológicas completas, origem rigorosa de a0 e validação estatística independente.
