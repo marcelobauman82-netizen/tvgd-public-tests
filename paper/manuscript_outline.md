@@ -551,6 +551,85 @@ This section will summarize scalar, vector, tensor and PPN consistency checks, w
 
 ## 20. Falsifiability
 
-Explicit observational conditions and statistical bounds that could weaken, restrict, or definitively falsify the TVGD framework:
+Explicit observational conditions and statistical limits that can weaken, restrict or falsify the TVGD framework:
+
+- clean galaxy samples rejecting the response function <b>P(u) = 1 − exp(−u)</b>;
+- external dwarf-galaxy samples failing the same acceleration-response law;
+- weak-lensing or strong-lensing data requiring an amplification incompatible with <b>alpha(u) = 1 / P(u)</b>;
+- group and cluster redshift data rejecting the predicted structural-time hierarchy;
+- Solar-System, PPN or gravitational-wave constraints excluding the healthy covariant branch;
+- RSD, CMB, BAO or supernova likelihoods producing strong statistical tension against the cosmological sector;
+- black-hole shadows, ISCO constraints or ringdown data rejecting the structural-saturation branch;
+- delayed-radio TDE samples failing to show the predicted structural-delay behavior;
+- quasar-alignment or supernova-dipole signals disappearing under independent larger samples;
+- independent reproduction attempts showing that the public validation scripts depend on unstable cuts, hidden tuning or non-reproducible assumptions.
+
+A central requirement of TVGD is that the same structural-vacuum response must remain coherent across regimes. If the theory works only in one sector but fails systematically in others, the unified spacetime interpretation is weakened.
+
+Therefore, falsifiability is not an appendix of the theory. It is part of the construction itself.
+
+---
+
+## 21. Public Verification Package
+
+This section describes the public GitHub repository associated with the TVGD validation program.
+
+The repository should document:
+
+- validation scripts;
+- reproducibility quickstart;
+- known limitations;
+- data sources;
+- falsifiability checklist;
+- citation metadata;
+- requirements file;
+- expected outputs;
+- model-comparison summaries;
+- notes on external datasets.
+
+The purpose is to make TVGD auditable. Every major empirical claim should be connected to at least one of the following:
+
+- a script;
+- a dataset;
+- a diagnostic output;
+- a table;
+- a falsification criterion;
+- a reproducibility instruction.
+
+The public repository should not be presented as proof of final correctness. It should be presented as the first reproducible validation layer of the theory.
+
+The correct interpretation is:
+
+> The public package does not prove TVGD as a final theory. It makes the current effective formulation testable, reproducible and open to independent criticism.
+
+This is important because the strongest version of TVGD is not the one that avoids risk, but the one that exposes its predictions clearly enough to be tested.
+
+---
+
+## 22. Known Limitations
+
+The current limitations of TVGD are specific and should be stated clearly.
+
+The main open points are:
+
+- the final fundamental action is still under development;
+- the complete coupled field equations still require final derivation;
+- covariant conservation must be demonstrated explicitly for the full system;
+- complete cosmological perturbations are still required;
+- the fundamental origin of <b>a<sub>0</sub></b> must be rigorously derived;
+- the structural-time sector requires catalog-level validation;
+- lensing tests require full covariance, baryonic mass modeling and comparison with halo models;
+- the Hubble sector requires complete likelihood validation with CMB, BAO, supernovae and RSD;
+- the black-hole sector must be extended to rotating solutions, ringdown, accretion and EHT-level tests;
+- likelihood-level statistical validation and Bayesian comparison are still required;
+- independent reproduction remains essential.
+
+These limitations do not mean absence of a covariant basis. They mean that TVGD is an advanced effective spacetime theory still moving toward a final formulation.
+
+The correct scientific status is:
+
+> TVGD has moved beyond a purely phenomenological galactic model. It has an effective covariant spacetime architecture, public tests and falsifiable predictions. What remains open is the final fundamental closure and independent statistical validation.
+
+This framing is important. It avoids two errors: overstating the theory as already complete, and understating it as if no covariant structure existed.
 
 
