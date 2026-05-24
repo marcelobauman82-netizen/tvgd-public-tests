@@ -38,6 +38,7 @@ g_{\rm TVGD} = \frac{g_{\rm bar}}{P(u)}.
 No limite de baixa aceleração, quando \(u \ll 1\),
 
 ```math
+
 P(u) \approx u
 
 então
