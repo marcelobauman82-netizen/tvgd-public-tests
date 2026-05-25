@@ -1,3 +1,10 @@
+## Citation and DOI
+
+The public validation package is archived on Zenodo:
+
+**DOI:** https://doi.org/10.5281/zenodo.20370724
+
+If you use this repository, please cite it using the `CITATION.cff` file.
 cff-version: 1.2.0
 message: "If you use this repository, please cite it as below."
 title: "TVGD — Teoria do Vácuo Gravitacional Dispersivo: Public Validation Repository"
