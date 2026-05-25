@@ -1,4 +1,5 @@
 # TVGD — Teoria do Vácuo Gravitacional Dispersivo
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.20370724.svg)](https://doi.org/10.5281/zenodo.20370724)
 
 **Autor:** Marcelo Bauman  
 **Status:** teoria efetiva covariante em desenvolvimento, com pacote público inicial de validação numérica, reprodutibilidade e falsificabilidade.
