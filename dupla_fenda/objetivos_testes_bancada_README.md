@@ -1,14 +1,17 @@
-[testes_bancada_TVGD_MEM_README.md](https://github.com/user-attachments/files/29005332/testes_bancada_TVGD_MEM_README.md)
+[testes_bancada_TVGD_MEM_README_equacoes_corrigidas.md](https://github.com/user-attachments/files/29005504/testes_bancada_TVGD_MEM_README_equacoes_corrigidas.md)
 # Testes de Bancada para TVGD-MEM
 
 **Explicação, objetivo físico e relação com a hipótese de estrutura efetiva do vácuo**
 
-Este documento organiza os testes de bancada propostos para a TVGD-MEM.  
+Este documento organiza os testes de bancada propostos para a TVGD-MEM.
+
 A ideia central não é afirmar que os testes provam diretamente a TVGD, mas transformar a hipótese em grandezas mensuráveis.
+
+## Objetivo geral
 
 A cadeia física investigada é:
 
-```
+```text
 estrutura efetiva do vácuo
 -> modulação de fase
 -> memória ou perda de coerência
@@ -18,15 +21,15 @@ estrutura efetiva do vácuo
 
 Na formulação operacional da TVGD-MEM, a ponte matemática central é:
 
-```
-V_corr_optico ≈ M_struct ≈ C_corr_micro
-```
+$$
+V_{\mathrm{corr}}^{\mathrm{optico}} \approx M_{\mathrm{struct}} \approx C_{\mathrm{corr}}^{\mathrm{micro}}
+$$
 
 Onde:
 
-- `V_corr_optico` é a visibilidade corrigida de franjas ópticas;
-- `M_struct` é a métrica efetiva de memória estrutural;
-- `C_corr_micro` é a coerência fasorial medida em micro-ondas.
+- $V_{\mathrm{corr}}^{\mathrm{optico}}$ é a visibilidade corrigida de franjas ópticas;
+- $M_{\mathrm{struct}}$ é a métrica efetiva de memória estrutural;
+- $C_{\mathrm{corr}}^{\mathrm{micro}}$ é a coerência fasorial medida em micro-ondas.
 
 ---
 
@@ -38,21 +41,15 @@ Mede a resposta do sistema sem perturbação, definindo a linha de base instrume
 
 A transmissão medida pelo VNA pode ser representada por:
 
-```
-S21_ref(f) = |S21(f)| * exp(i * phi_ref(f))
-```
+$$
+S_{21}^{\mathrm{ref}}(f)=|S_{21}(f)|e^{i\phi_{\mathrm{ref}}(f)}
+$$
 
-Também podem ser extraídos:
+Também podem ser extraídos a fase de referência $\phi_{\mathrm{ref}}(f)$ e o atraso de grupo:
 
-```
-phi_ref(f)
-```
-
-e o atraso de grupo:
-
-```
-tau_g(f) = -(1 / (2*pi)) * dphi/df
-```
+$$
+\tau_g(f)=-\frac{1}{2\pi}\frac{d\phi}{df}
+$$
 
 ### O que ajuda a sustentar
 
@@ -68,7 +65,7 @@ Antes de qualquer interpretação física, é necessário mostrar que a bancada 
 
 Compara diferentes condições experimentais:
 
-```
+```text
 referência
 fraca
 média
@@ -78,22 +75,27 @@ controle
 
 Para cada condição, mede-se a fase relativa em cada frequência:
 
-```
-Delta_phi_j(f_k) = phi_j(f_k) - phi_ref(f_k)
-```
+$$
+\Delta\phi_j(f_k)=\phi_j(f_k)-\phi_{\mathrm{ref}}(f_k)
+$$
 
 Depois calcula-se a coerência fasorial:
 
-```
-C_corr(j) = | (1/N) * sum_{k=1}^{N} exp(i * Delta_phi_j(f_k)) |
-```
+$$
+C_{\mathrm{corr}}(j)=\left|\frac{1}{N}\sum_{k=1}^{N}e^{i\Delta\phi_j(f_k)}\right|
+$$
 
 ### Assinatura esperada
 
-```
-C_ref > C_fraca > C_media > C_forte
-C_controle ≈ 0
-```
+$$
+C_{\mathrm{ref}}>C_{\mathrm{fraca}}>C_{\mathrm{media}}>C_{\mathrm{forte}}
+$$
+
+e
+
+$$
+C_{\mathrm{controle}}\approx 0
+$$
 
 ### O que ajuda a sustentar
 
@@ -101,9 +103,9 @@ A existência de uma memória de fase efetiva mensurável.
 
 Em linguagem TVGD-MEM, esse teste avalia a hipótese operacional:
 
-```
-C_corr_micro ≈ M_struct
-```
+$$
+C_{\mathrm{corr}}^{\mathrm{micro}}\approx M_{\mathrm{struct}}
+$$
 
 ---
 
@@ -113,17 +115,17 @@ C_corr_micro ≈ M_struct
 
 Repete o Teste 2 em instantes diferentes:
 
-```
-T0, T1, T2, ...
-```
+$$
+T_0,\ T_1,\ T_2,\ldots
+$$
 
 e verifica se a hierarquia se mantém ao longo do tempo.
 
 ### Assinatura esperada
 
-```
-C_ref > C_fraca > C_media > C_forte
-```
+$$
+C_{\mathrm{ref}}>C_{\mathrm{fraca}}>C_{\mathrm{media}}>C_{\mathrm{forte}}
+$$
 
 em várias repetições temporais.
 
@@ -139,19 +141,19 @@ Se o comportamento aparece de modo consistente ao longo do tempo, ele deixa de p
 
 ### O que faz
 
-Gira a bancada ou altera sua orientação espacial, medindo a resposta em função do ângulo efetivo `chi`.
+Gira a bancada ou altera sua orientação espacial, medindo a resposta em função do ângulo efetivo $\chi$.
 
 Na TVGD-MEM, a previsão efetiva de bancada é uma assinatura angular dipolar:
 
-```
-epsilon_mem(u, chi) = epsilon_0 * exp(-u) * cos(chi)
-```
+$$
+\epsilon_{\mathrm{mem}}(u,\chi)=\epsilon_0 e^{-u}\cos\chi
+$$
 
 ### Assinatura esperada
 
 Uma variação aproximadamente cossenoidal:
 
-```
+```text
 máximo em uma orientação
 mínimo na orientação oposta
 valor intermediário próximo de 90 graus
@@ -169,25 +171,25 @@ Este é um dos testes mais importantes, porque um ruído puramente aleatório n�
 
 ### O que faz
 
-Altera uma condição associada ao parâmetro efetivo `u`, que controla o fator de blindagem.
+Altera uma condição associada ao parâmetro efetivo $u$, que controla o fator de blindagem.
 
 Na formulação efetiva, a amplitude residual esperada segue:
 
-```
-epsilon_mem(u) = epsilon_0 * exp(-u)
-```
+$$
+\epsilon_{\mathrm{mem}}(u)=\epsilon_0 e^{-u}
+$$
 
 ### Assinatura esperada
 
-```
-u aumenta -> exp(-u) diminui -> epsilon_mem diminui
-```
+$$
+u\uparrow \Rightarrow e^{-u}\downarrow \Rightarrow \epsilon_{\mathrm{mem}}\downarrow
+$$
 
 ### O que ajuda a sustentar
 
 A ideia de screening ou blindagem estrutural.
 
-Se a resposta experimental segue aproximadamente uma lei exponencial em `u`, isso fortalece a consistência interna da hipótese TVGD-MEM.
+Se a resposta experimental segue aproximadamente uma lei exponencial em $u$, isso fortalece a consistência interna da hipótese TVGD-MEM.
 
 ---
 
@@ -199,15 +201,15 @@ Usa uma fonte de micro-ondas e uma geometria de duas fendas, gerando um padrão 
 
 Um modelo efetivo para o padrão na tela é:
 
-```
-I(x) = I_env(x) * [1 + V0 * M_struct * cos(Delta_phi(x))]
-```
+$$
+I(x)=I_{\mathrm{env}}(x)\left[1+V_0M_{\mathrm{struct}}\cos(\Delta\phi(x))\right]
+$$
 
 ### Assinaturas esperadas
 
-- se `M_struct ≈ 1`, as franjas são fortes;
-- se `0 < M_struct < 1`, as franjas enfraquecem;
-- se `M_struct -> 0`, o padrão interferométrico praticamente desaparece.
+- se $M_{\mathrm{struct}}\approx 1$, as franjas são fortes;
+- se $0<M_{\mathrm{struct}}<1$, as franjas enfraquecem;
+- se $M_{\mathrm{struct}}\to 0$, o padrão interferométrico praticamente desaparece.
 
 ### O que ajuda a sustentar
 
@@ -225,21 +227,21 @@ Compara uma medida interferométrica em micro-ondas com uma medida de visibilida
 
 No óptico, usa-se:
 
-```
-V_corr_optico
-```
+$$
+V_{\mathrm{corr}}^{\mathrm{optico}}
+$$
 
 No micro-ondas, usa-se:
 
-```
-C_corr_micro
-```
+$$
+C_{\mathrm{corr}}^{\mathrm{micro}}
+$$
 
 A hipótese operacional é:
 
-```
-V_corr_optico ≈ M_struct ≈ C_corr_micro
-```
+$$
+V_{\mathrm{corr}}^{\mathrm{optico}}\approx M_{\mathrm{struct}}\approx C_{\mathrm{corr}}^{\mathrm{micro}}
+$$
 
 ### O que ajuda a sustentar
 
@@ -265,10 +267,15 @@ Exemplos:
 
 ### Assinaturas esperadas
 
-```
-C_controle ≈ 0
-A_cos_chi ≈ 0
-```
+$$
+C_{\mathrm{controle}}\approx 0
+$$
+
+e
+
+$$
+A_{\cos\chi}\approx 0
+$$
 
 ### O que ajuda a sustentar
 
@@ -321,12 +328,12 @@ Esse conjunto já oferece uma linha experimental sólida para avaliar a hipótes
 | Teste | O que mede | O que sustenta |
 |---|---|---|
 | Calibração | Estabilidade da bancada | Confiabilidade instrumental |
-| Memória estática | `C_corr` | Memória de fase efetiva |
+| Memória estática | $C_{\mathrm{corr}}$ | Memória de fase efetiva |
 | Robustez temporal | Repetição do efeito | Reprodutibilidade |
-| Angular | Dependência `cos(chi)` | Estrutura projetada/direcional |
-| Blindagem `u` | Queda `exp(-u)` | Screening estrutural |
+| Angular | Dependência $\cos\chi$ | Estrutura projetada/direcional |
+| Blindagem $u$ | Queda $e^{-u}$ | Screening estrutural |
 | Dupla fenda micro-ondas | Franjas eletromagnéticas | Fase relativa interferométrica |
-| Micro x óptico | `C_corr ≈ V_corr` | Universalidade operacional |
+| Micro x óptico | $C_{\mathrm{corr}}\approx V_{\mathrm{corr}}$ | Universalidade operacional |
 | Controle nulo | Ausência de sinal | Não é falso positivo |
 | Adversarial | Falhas instrumentais | Separação entre sinal e artefato |
 
@@ -352,8 +359,16 @@ Ele não apresenta uma prova definitiva de nova física.
 
 Ele organiza um protocolo de exclusão:
 
-```
+```text
 1. Primeiro, tenta-se explicar tudo pela física convencional.
 2. Depois, removem-se artefatos instrumentais e falsos positivos.
 3. Só então se avalia se resta um excedente compatível com TVGD-MEM.
 ```
+
+---
+
+## Nota sobre renderização no GitHub
+
+Este arquivo usa equações em formato GitHub Markdown com `$$ ... $$`.
+
+Se a visualização de equações não aparecer corretamente em algum ambiente, as mesmas equações continuam legíveis no texto e podem ser copiadas diretamente para LaTeX ou Overleaf.
